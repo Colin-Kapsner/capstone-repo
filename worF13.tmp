@@ -1,0 +1,68 @@
+[gd_scene load_steps=8 format=3 uid="uid://kguu0sowdcf"]
+
+[ext_resource type="PackedScene" uid="uid://dd6fotvuuplqr" path="res://platforms/platform_flat_long.tscn" id="1_pwkmd"]
+[ext_resource type="Script" path="res://main.gd" id="1_sfk27"]
+[ext_resource type="PackedScene" uid="uid://bj3ynq22kuhh" path="res://platforms/platform_flat_short.tscn" id="2_seijx"]
+[ext_resource type="PackedScene" uid="uid://dtskr7q6mavlh" path="res://player.tscn" id="3_ykecn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lrf7t"]
+size = Vector2(1587.75, 296)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xfhx3"]
+size = Vector2(67.875, 355)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2vx1m"]
+size = Vector2(67.875, 355)
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_sfk27")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Panel" type="Panel" parent="StaticBody2D"]
+offset_left = -1.0
+offset_top = 351.0
+offset_right = 1587.0
+offset_bottom = 647.0
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(793.125, 499)
+shape = SubResource("RectangleShape2D_lrf7t")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="Panel" type="Panel" parent="StaticBody2D2"]
+offset_left = 1.0
+offset_top = -2.0
+offset_right = 68.0
+offset_bottom = 353.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(34.0625, 174.5)
+shape = SubResource("RectangleShape2D_xfhx3")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="Panel" type="Panel" parent="StaticBody2D3"]
+offset_left = 1523.0
+offset_top = -2.0
+offset_right = 1590.0
+offset_bottom = 353.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(1557, 176)
+shape = SubResource("RectangleShape2D_2vx1m")
+
+[node name="Platform_flat_long" parent="." instance=ExtResource("1_pwkmd")]
+position = Vector2(565, 182)
+
+[node name="Platform_flat_short" parent="." instance=ExtResource("2_seijx")]
+position = Vector2(269, 268)
+
+[node name="Platform_flat_short2" parent="." instance=ExtResource("2_seijx")]
+position = Vector2(140, 102)
+
+[node name="Player" parent="." instance=ExtResource("3_ykecn")]
+position = Vector2(582, 294)

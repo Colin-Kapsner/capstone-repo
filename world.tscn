@@ -1,0 +1,100 @@
+[gd_scene load_steps=9 format=3 uid="uid://kguu0sowdcf"]
+
+[ext_resource type="PackedScene" uid="uid://dd6fotvuuplqr" path="res://scenes/entities/platforms/FlatLong.tscn" id="1_pwkmd"]
+[ext_resource type="PackedScene" uid="uid://bj3ynq22kuhh" path="res://scenes/entities/platforms/FlatShort.tscn" id="2_seijx"]
+[ext_resource type="PackedScene" uid="uid://dtskr7q6mavlh" path="res://scenes/entities/player/player.tscn" id="3_ykecn"]
+[ext_resource type="PackedScene" uid="uid://0tq2gmg5uvll" path="res://scenes/entities/platforms/TallShort.tscn" id="4_nkfsg"]
+[ext_resource type="PackedScene" uid="uid://yo233yluhafa" path="res://scenes/entities/platforms/FlatShortSolid.tscn" id="5_5y1vl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lrf7t"]
+size = Vector2(1587.75, 296)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xfhx3"]
+size = Vector2(67.875, 355)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2vx1m"]
+size = Vector2(67.875, 355)
+
+[node name="World" type="Node2D"]
+
+[node name="Platforms" type="Node" parent="."]
+
+[node name="Platform_flat_long" parent="Platforms" instance=ExtResource("1_pwkmd")]
+position = Vector2(662, 199)
+
+[node name="Platform_flat_short" parent="Platforms" instance=ExtResource("2_seijx")]
+position = Vector2(262, 275)
+
+[node name="Platform_tall_short" parent="Platforms" instance=ExtResource("4_nkfsg")]
+position = Vector2(329, 167)
+
+[node name="Platform_flat_short2" parent="Platforms" instance=ExtResource("2_seijx")]
+position = Vector2(-50, 185)
+
+[node name="Platform_flat_short8" parent="Platforms" instance=ExtResource("2_seijx")]
+position = Vector2(360, -204)
+
+[node name="Platform_flat_short7" parent="Platforms" instance=ExtResource("2_seijx")]
+position = Vector2(850, -244)
+
+[node name="Platform_flat_long2" parent="Platforms" instance=ExtResource("1_pwkmd")]
+position = Vector2(705, -170.17)
+
+[node name="Platform_flat_short3" parent="Platforms" instance=ExtResource("2_seijx")]
+position = Vector2(1277, 123)
+
+[node name="Platform_flat_short4" parent="Platforms" instance=ExtResource("2_seijx")]
+position = Vector2(402, 123)
+
+[node name="StaticBody2D" parent="Platforms" instance=ExtResource("5_5y1vl")]
+position = Vector2(841, -6)
+
+[node name="StaticBody2D3" parent="Platforms" instance=ExtResource("5_5y1vl")]
+position = Vector2(841, -85)
+
+[node name="StaticBody2D4" parent="Platforms" instance=ExtResource("5_5y1vl")]
+position = Vector2(432, -85)
+
+[node name="StaticBody2D2" parent="Platforms" instance=ExtResource("5_5y1vl")]
+position = Vector2(839, 79)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Panel" type="Panel" parent="StaticBody2D"]
+offset_left = -1.0
+offset_top = 351.0
+offset_right = 1587.0
+offset_bottom = 647.0
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(793.125, 499)
+shape = SubResource("RectangleShape2D_lrf7t")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="Panel" type="Panel" parent="StaticBody2D2"]
+offset_left = 1.0
+offset_top = -2.0
+offset_right = 68.0
+offset_bottom = 353.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(34.0625, 174.5)
+shape = SubResource("RectangleShape2D_xfhx3")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="Panel" type="Panel" parent="StaticBody2D3"]
+offset_left = 1523.0
+offset_top = -2.0
+offset_right = 1590.0
+offset_bottom = 353.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(1557, 176)
+shape = SubResource("RectangleShape2D_2vx1m")
+
+[node name="Player" parent="." instance=ExtResource("3_ykecn")]
+position = Vector2(124, 304)

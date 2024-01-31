@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtskr7q6mavlh"]
+
+[ext_resource type="Script" path="res://scenes/entities/player/Player.gd" id="1_5l6i7"]
+[ext_resource type="Texture2D" uid="uid://uefp3uxbj7ad" path="res://scenes/entities/player/player_img.png" id="2_p0jjs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0ij0r"]
+radius = 16.0312
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_5l6i7")
+
+[node name="PlayerImg" type="Sprite2D" parent="."]
+position = Vector2(-0.593997, 0)
+scale = Vector2(0.0770038, 0.0778264)
+texture = ExtResource("2_p0jjs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_0ij0r")
+metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+position_smoothing_speed = 6.0
+
+[node name="CoyoteTimer" type="Timer" parent="."]
+wait_time = 1.084
+one_shot = true
+
+[node name="WallJumpSlowTimer" type="Timer" parent="."]
+wait_time = 0.105
+one_shot = true
