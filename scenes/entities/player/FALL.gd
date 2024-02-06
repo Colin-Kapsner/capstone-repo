@@ -1,11 +1,9 @@
 extends "state.gd"
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func update(delta):
+	Player.gravity(delta)
+	player_movement
+	if Player.is_on_floor():
+		return STATES.IDLE
+	return null

@@ -1,11 +1,19 @@
 extends Node
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+var STATES = null
+var Player = null
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func enter_state():
 	pass
+func exit_state():
+	pass
+func update(delta):
+	return null
+func player_movement():
+	if Player.movement_input.x > 0:
+		Player.velocity.x = Player.SPEED
+	elif Player.movement_input.x < 0:
+		Player.velocity.x = - Player.SPEED
+	else:
+		Player.velocity.x = 0
