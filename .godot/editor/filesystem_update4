@@ -1,8 +1,1 @@
 res://scenes/entities/player/player.tscn
-res://scenes/entities/player/state.gd
-res://scenes/entities/player/Player.gd
-res://scenes/entities/player/IDLE.gd
-res://scenes/entities/player/STATES.gd
-res://scenes/entities/player/MOVE.gd
-res://scenes/entities/player/JUMP.gd
-res://scenes/entities/player/FALL.gd
