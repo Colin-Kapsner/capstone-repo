@@ -1,12 +1,12 @@
 extends CharacterBody2D
 
 
-# This is a test change...
+
 
 
 var health = 10
 # movement
-var player_speed = 325.0
+var SPEED = 325.0
 const acceleration = 55
 const jump_velocity = -450.0
 const wall_jump_velocity = -400.0
@@ -50,7 +50,7 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("Jump"):
 			velocity.y = wall_jump_velocity
 			while !wall_jump_timer.is_stopped():
-				player_speed -= 275
+				SPEED -= 275
 			velocity.x = wall_jump_knockback * -direction
 	
 	var was_on_floor = is_on_floor()
@@ -78,6 +78,6 @@ func dash(direction):
 
 func move(direction):
 		if direction:
-			velocity.x = move_toward(velocity.x, player_speed * direction, acceleration)
+			velocity.x = move_toward(velocity.x, SPEED * direction, acceleration)
 		else:
-			velocity.x = move_toward(velocity.x, player_speed * direction, acceleration + 5) #faster deceleration
+			velocity.x = move_toward(velocity.x, SPEED * direction, acceleration + 5) #faster deceleration
