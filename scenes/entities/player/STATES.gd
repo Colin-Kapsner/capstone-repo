@@ -4,7 +4,5 @@ extends Node
 @onready var MOVE = $MOVE
 @onready var JUMP = $JUMP
 @onready var FALL = $FALL
-
-# @onready var DASH = $DASH
-# @onready var SLIDE = $SLIDE
-# @onready var CLIMB = $CLIMB
+@onready var DASH = $DASH
+@onready var WALLSLIDE = $WALLSLIDE

@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1707191052
+::res://::1707346100
 icon.svg::CompressedTexture2D::7450420230084733824::1702965944::1706753180::1::::<><>::
 Main.gd::GDScript::-1::1702969826::0::1::::<>Node2D<>::
 main.tscn::PackedScene::3556694728827375922::1702969848::0::1::::<><>::res://Main.gd
@@ -12,7 +12,7 @@ FlatShort.tscn::PackedScene::90511887059425317::1707185705::0::1::::<><>::
 FlatShortSolid.tscn::PackedScene::1715124405159547394::1707185705::0::1::::<><>::
 TallLong.tscn::PackedScene::3740488457652829247::1703236394::0::1::::<><>::
 TallShort.tscn::PackedScene::1794964290588908181::1703236398::0::1::::<><>::
-::res://scenes/entities/player/::1707191032
+::res://scenes/entities/player/::1707191057
 FALL.gd::GDScript::-1::1707190336::0::1::::<><>::
 FALL.tscn::PackedScene::180817201377709749::1707185705::0::1::::<><>::res://scenes/entities/player/FALL.gd
 IDLE.gd::GDScript::-1::1707190615::0::1::::<><>::
@@ -22,7 +22,7 @@ JUMP.tscn::PackedScene::8218373014039165044::1707185705::0::1::::<><>::res://sce
 MOVE.gd::GDScript::-1::1707190428::0::1::::<><>::
 MOVE.tscn::PackedScene::5032109220433790339::1707185705::0::1::::<><>::res://scenes/entities/player/MOVE.gd
 Player.gd::GDScript::-1::1707190735::0::1::::<>CharacterBody2D<>::
-player.tscn::PackedScene::8530648115087676401::1707191032::0::1::::<><>::res://scenes/entities/player/Player.gd<>uid://uefp3uxbj7ad::::res://scenes/entities/player/player_img.png<>res://scenes/entities/player/STATES.gd<>uid://dpdbnxwrn4bts::::res://scenes/entities/player/JUMP.tscn<>uid://ccigh1xgrquio::::res://scenes/entities/player/IDLE.tscn<>uid://cdxudr3i3rxr4::::res://scenes/entities/player/MOVE.tscn<>uid://ctubeawyfw8t::::res://scenes/entities/player/FALL.tscn
+player.tscn::PackedScene::8530648115087676401::1707191057::0::1::::<><>::res://scenes/entities/player/Player.gd<>uid://uefp3uxbj7ad::::res://scenes/entities/player/player_img.png<>res://scenes/entities/player/STATES.gd<>uid://dpdbnxwrn4bts::::res://scenes/entities/player/JUMP.tscn<>uid://ccigh1xgrquio::::res://scenes/entities/player/IDLE.tscn<>uid://cdxudr3i3rxr4::::res://scenes/entities/player/MOVE.tscn<>uid://ctubeawyfw8t::::res://scenes/entities/player/FALL.tscn
 player_img.png::CompressedTexture2D::1412366258245926715::1703222638::1706394900::1::::<><>::
 state.gd::GDScript::-1::1707190788::0::1::::<>Node<>::
 STATES.gd::GDScript::-1::1707189036::0::1::::<>Node<>::

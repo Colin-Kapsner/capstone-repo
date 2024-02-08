@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dtskr7q6mavlh"]
+[gd_scene load_steps=10 format=3 uid="uid://dtskr7q6mavlh"]
 
 [ext_resource type="Script" path="res://scenes/entities/player/Player.gd" id="1_5l6i7"]
 [ext_resource type="Texture2D" uid="uid://uefp3uxbj7ad" path="res://scenes/entities/player/player_img.png" id="2_p0jjs"]
@@ -8,8 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://cdxudr3i3rxr4" path="res://scenes/entities/player/MOVE.tscn" id="5_ff0ql"]
 [ext_resource type="Script" path="res://scenes/entities/player/IDLE.gd" id="6_ot4r5"]
 [ext_resource type="PackedScene" uid="uid://ctubeawyfw8t" path="res://scenes/entities/player/FALL.tscn" id="6_tfl4x"]
-[ext_resource type="PackedScene" uid="uid://dd1lek0mo24kp" path="res://scenes/entities/player/DASH.tscn" id="9_1dnbd"]
-[ext_resource type="PackedScene" uid="uid://cuwbfqer1rk6a" path="res://scenes/entities/player/WALLSLIDE.tscn" id="10_pc4s1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0ij0r"]
 radius = 16.0312
@@ -21,7 +19,6 @@ script = ExtResource("1_5l6i7")
 position = Vector2(-0.593997, 0)
 scale = Vector2(0.0770038, 0.0778264)
 texture = ExtResource("2_p0jjs")
-metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_0ij0r")
@@ -51,23 +48,9 @@ script = ExtResource("6_ot4r5")
 
 [node name="FALL" parent="STATES" instance=ExtResource("6_tfl4x")]
 
-[node name="DASH" parent="STATES" instance=ExtResource("9_1dnbd")]
-
-[node name="WALLSLIDE" parent="STATES" instance=ExtResource("10_pc4s1")]
-
 [node name="Label" type="Label" parent="."]
 offset_left = -24.0
 offset_top = -40.0
 offset_right = 23.0
 offset_bottom = -17.0
 text = "STATE"
-
-[node name="Raycasts" type="Node2D" parent="."]
-
-[node name="Right" type="RayCast2D" parent="Raycasts"]
-target_position = Vector2(18, 0)
-collision_mask = 2
-
-[node name="Left" type="RayCast2D" parent="Raycasts"]
-target_position = Vector2(-18, 0)
-collision_mask = 2
