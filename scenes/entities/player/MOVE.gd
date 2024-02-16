@@ -4,8 +4,9 @@ extends "state.gd"
 func update(delta):
 	Player.gravity(delta)
 	player_movement()
-	if Player.velocity != 0 and !Player.player_input():
-		Player.velocity.x = move_toward(Player.velocity.x, 0, Player.acceleration)
+	if Player.movement_input == Vector2.ZERO and Player.velocity.x != 0:
+		if Player.velocity.x > (Player.friction * delta):
+			Player.velocity.x -= Player.velocity.x.normalized() * (Player.friction * delta)
 	if Player.velocity.x == 0:
 		return STATES.IDLE
 	if Player.velocity.y > 0:
