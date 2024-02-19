@@ -4,7 +4,7 @@ extends CharacterBody2D
 # movement
 var SPEED = 325.0
 const acceleration = 35
-const friction = 40
+const friction = 33
 const JUMP_VELOCITY = -450.0
 const wall_jump_velocity = -400.0
 var last_direction = Vector2.RIGHT
