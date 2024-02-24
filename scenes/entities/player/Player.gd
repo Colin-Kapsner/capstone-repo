@@ -1,16 +1,6 @@
 extends CharacterBody2D
 
 
-# movement
-var SPEED = 325.0
-const acceleration = 35
-const friction = 33
-const JUMP_VELOCITY = -450.0
-const wall_jump_velocity = -400.0
-var last_direction = Vector2.RIGHT
-# mechanics
-var has_dash = true
-
 # player input
 var movement_input = Vector2.ZERO
 var jump_input = false
@@ -18,23 +8,49 @@ var jump_input_actuation = false
 var climb_input = false
 var dash_input = false
 
+# player physics
+var SPEED = 325.0
+var gravity_var = 0
+var tile_size = 8
+var MAX_JUMP_HEIGHT = tile_size * 3 + .35
+var MIN_JUMP_HEIGHT = tile_size * 2 + .35
+var jump_duration = 0.3
+var spring_velocity
+var max_jump_velocity
+var min_jump_velocity
+
+var acceleration = 35
+var friction = 33
+var last_direction = Vector2.RIGHT
+var JUMP_VELOCITY = -450.0
+var wall_jump_velocity = -400.0
+# mechanics
+var has_dash = true
+
 # state stuff
 var current_state = null
 var prev_state = null
+
 # nodes
 @onready var STATES = $STATES
 @onready var Raycasts = $Raycasts
 
-var gravity_value = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
 func _ready():
+	set_velocity_values()
 	for state in STATES.get_children():
 		state.STATES = STATES
 		state.Player = self
 	prev_state = STATES.IDLE
 	current_state = STATES.IDLE
 
+func  set_velocity_values():
+	gravity_var = 2 * MAX_JUMP_HEIGHT / pow(jump_duration,2)
+	max_jump_velocity = -sqrt(2 * gravity_var * MAX_JUMP_HEIGHT)
+	min_jump_velocity = -sqrt(2 * gravity_var * MIN_JUMP_HEIGHT)
+	# spring_velocity = -sqrt(2 * gravity_var * SPRING_JUMP_HEIGHT)
+	
 func _physics_process(delta):
 	player_input()
 	change_state(current_state.update(delta))
@@ -46,7 +62,7 @@ func _physics_process(delta):
 
 func gravity(delta):
 	if not is_on_floor():
-		velocity.y += gravity_value * delta
+		velocity.y += gravity_var * delta
 
 func change_state(input_state):
 	if input_state != null:
@@ -58,6 +74,7 @@ func change_state(input_state):
 
 func player_input():
 	movement_input = Vector2.ZERO
+	
 	if Input.is_action_pressed("MoveRight"):
 		movement_input.x += 1
 	if Input.is_action_pressed("MoveLeft"):

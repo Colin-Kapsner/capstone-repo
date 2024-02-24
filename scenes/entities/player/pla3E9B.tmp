@@ -54,7 +54,6 @@ script = ExtResource("6_ot4r5")
 [node name="FALL" parent="STATES" instance=ExtResource("6_tfl4x")]
 
 [node name="DASH" parent="STATES" instance=ExtResource("9_1dnbd")]
-dash_duration = null
 
 [node name="WALLSLIDE" parent="STATES" instance=ExtResource("10_pc4s1")]
 

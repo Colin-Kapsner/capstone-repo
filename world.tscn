@@ -1,106 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://kguu0sowdcf"]
+[gd_scene load_steps=3 format=3 uid="uid://kguu0sowdcf"]
 
-[ext_resource type="PackedScene" uid="uid://dd6fotvuuplqr" path="res://scenes/entities/platforms/FlatLong.tscn" id="1_pwkmd"]
-[ext_resource type="PackedScene" uid="uid://bj3ynq22kuhh" path="res://scenes/entities/platforms/FlatShort.tscn" id="2_seijx"]
+[ext_resource type="PackedScene" uid="uid://c056lhwdui221" path="res://scenes/entities/maps/worldmap.tscn" id="2_d6bib"]
 [ext_resource type="PackedScene" uid="uid://dtskr7q6mavlh" path="res://scenes/entities/player/player.tscn" id="3_ykecn"]
-[ext_resource type="PackedScene" uid="uid://0tq2gmg5uvll" path="res://scenes/entities/platforms/TallShort.tscn" id="4_nkfsg"]
-[ext_resource type="PackedScene" uid="uid://yo233yluhafa" path="res://scenes/entities/platforms/FlatShortSolid.tscn" id="5_5y1vl"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lrf7t"]
-size = Vector2(1587.75, 296)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xfhx3"]
-size = Vector2(67.875, 355)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2vx1m"]
-size = Vector2(67.875, 355)
 
 [node name="World" type="Node2D"]
 
 [node name="Platforms" type="Node" parent="."]
 
-[node name="Platform_flat_long" parent="Platforms" instance=ExtResource("1_pwkmd")]
-position = Vector2(662, 199)
-
-[node name="Platform_flat_short" parent="Platforms" instance=ExtResource("2_seijx")]
-position = Vector2(262, 275)
-
-[node name="Platform_tall_short" parent="Platforms" instance=ExtResource("4_nkfsg")]
-position = Vector2(329, 167)
-
-[node name="Platform_flat_short2" parent="Platforms" instance=ExtResource("2_seijx")]
-position = Vector2(-50, 185)
-
-[node name="Platform_flat_short8" parent="Platforms" instance=ExtResource("2_seijx")]
-position = Vector2(360, -204)
-
-[node name="Platform_flat_short7" parent="Platforms" instance=ExtResource("2_seijx")]
-position = Vector2(850, -244)
-
-[node name="Platform_flat_long2" parent="Platforms" instance=ExtResource("1_pwkmd")]
-position = Vector2(705, -170.17)
-
-[node name="Platform_flat_short3" parent="Platforms" instance=ExtResource("2_seijx")]
-position = Vector2(1277, 123)
-
-[node name="Platform_flat_short4" parent="Platforms" instance=ExtResource("2_seijx")]
-position = Vector2(402, 123)
-
-[node name="StaticBody2D" parent="Platforms" instance=ExtResource("5_5y1vl")]
-position = Vector2(841, -6)
-
-[node name="StaticBody2D3" parent="Platforms" instance=ExtResource("5_5y1vl")]
-position = Vector2(841, -85)
-
-[node name="StaticBody2D4" parent="Platforms" instance=ExtResource("5_5y1vl")]
-position = Vector2(432, -85)
-
-[node name="StaticBody2D2" parent="Platforms" instance=ExtResource("5_5y1vl")]
-position = Vector2(839, 79)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-collision_layer = 3
-collision_mask = 3
-
-[node name="Panel" type="Panel" parent="StaticBody2D"]
-offset_left = -1.0
-offset_top = 351.0
-offset_right = 1587.0
-offset_bottom = 647.0
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(793.125, 499)
-shape = SubResource("RectangleShape2D_lrf7t")
-metadata/_edit_lock_ = true
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-collision_layer = 3
-collision_mask = 3
-
-[node name="Panel" type="Panel" parent="StaticBody2D2"]
-offset_left = 1.0
-offset_top = -2.0
-offset_right = 68.0
-offset_bottom = 353.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(34.0625, 174.5)
-shape = SubResource("RectangleShape2D_xfhx3")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="."]
-collision_layer = 3
-collision_mask = 3
-
-[node name="Panel" type="Panel" parent="StaticBody2D3"]
-offset_left = 1523.0
-offset_top = -2.0
-offset_right = 1590.0
-offset_bottom = 353.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-position = Vector2(1557, 176)
-shape = SubResource("RectangleShape2D_2vx1m")
-
 [node name="Player" parent="." instance=ExtResource("3_ykecn")]
-position = Vector2(124, 304)
+
+[node name="TileMap" parent="." instance=ExtResource("2_d6bib")]
+position = Vector2(-2, 0)
+layer_0/tile_data = PackedInt32Array(196606, 458752, 2, 196607, 458752, 2, 131072, 458752, 2, 131073, 458752, 2, 131074, 458752, 2, 131075, 458752, 2, 131076, 458752, 2, 131077, 458752, 2, 131078, 458752, 2, 131079, 458752, 2, 131080, 458752, 2, 131081, 458752, 2, 131082, 458752, 2, 131083, 458752, 2, 131084, 458752, 2, 131085, 458752, 2, 131086, 458752, 2, 131087, 458752, 2, 131088, 458752, 2, 131089, 458752, 2, 131090, 458752, 2, 131091, 458752, 2, 131092, 458752, 2, 131093, 458752, 2, 131094, 458752, 2, 131095, 458752, 2, 131096, 458752, 2, 131097, 458752, 2, 131098, 458752, 2, 131099, 458752, 2, 131100, 458752, 2, 131101, 458752, 2, 131102, 458752, 2, 131103, 458752, 2, 131104, 458752, 2, 131105, 458752, 2, 131106, 458752, 2, 131107, 458752, 2, 131108, 458752, 2, 131109, 458752, 2, 131110, 458752, 2, 131111, 458752, 2, 131112, 458752, 2, 131113, 458752, 2, 131114, 458752, 2, 131115, 458752, 2, 131116, 458752, 2, 65555, 458752, 2, 19, 458752, 2, 65561, 458752, 2, 25, 458752, 2, 20, 458752, 2, 21, 458752, 2, 22, 458752, 2, 23, 458752, 2, 24, 458752, 2, 65560, 458752, 2, 65559, 458752, 2, 65558, 458752, 2, 65557, 458752, 2, 65556, 458752, 2, 65569, 458752, 2, 65570, 458752, 2, 65571, 458752, 2, 65572, 458752, 2, 65573, 458752, 2, 65574, 458752, 2, 33, 458752, 2, 34, 458752, 2, 35, 458752, 2, 36, 458752, 2, 37, 458752, 2, 38, 458752, 2, 65575, 458752, 2, 65576, 458752, 2, 65577, 458752, 2, 65578, 458752, 2, 65579, 458752, 2, 65580, 458752, 2, 39, 458752, 2, 40, 458752, 2, 41, 458752, 2, 42, 458752, 2, 43, 458752, 2, 44, 458752, 2, 65563, 458752, 2, 65564, 458752, 2, 65565, 458752, 2, 65566, 458752, 2, 65567, 458752, 2, 65568, 458752, 2, 65562, 458752, 2, -65516, 458752, 2, -65515, 458752, 2, -65514, 458752, 2, -65513, 458752, 2, -65512, 458752, 2, -65511, 458752, 2, -65517, 458752, 2)

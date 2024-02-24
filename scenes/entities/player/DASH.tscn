@@ -4,6 +4,7 @@
 
 [node name="DASH" type="Node"]
 script = ExtResource("1_5y0xj")
+dash_duration = null
 
 [node name="DashDuration" type="Timer" parent="."]
 

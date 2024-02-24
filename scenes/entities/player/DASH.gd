@@ -1,8 +1,8 @@
 extends "state.gd"
 
 var dash_direction = Vector2.ZERO
-var dash_speed = 240
 var dashing = false
+@export var dash_speed = 240
 @export var dash_duration = .2
 @onready var DashDuration_timer = $DashDuration
 
@@ -14,8 +14,8 @@ func update(delta):
 		return STATES.WALLSLIDE
 	return null
 func enter_state():
-	Player.has_dash = false
 	dashing = true
+	Player.has_dash = false
 	DashDuration_timer.start(dash_duration)
 	if Player.movement_input != Vector2.ZERO:
 		dash_direction = Player.movement_input
@@ -25,8 +25,6 @@ func enter_state():
 func exit_state():
 	dashing = false
 	pass
-
-
 
 func _on_timer_timeout():
 	dashing = false

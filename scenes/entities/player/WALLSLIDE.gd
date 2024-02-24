@@ -1,19 +1,21 @@
 extends "state.gd"
 
-
+var last_wall_on = Vector2.ZERO
 @export var climb_speed = 50
 @export var wallslide_friction = .7
 
 func update(delta):
 	wallslide_movement(delta)
+	friction()
 	if Player.get_next_to_wall() == null:
 		return STATES.FALL
 	if Player.jump_input_actuation:
 		return STATES.JUMP
-		if Player.is_on_floor():
+	if Player.is_on_floor():
 			return STATES.IDLE
 	return null
-
+func enter_state():
+	last_wall_on = Player.get_next_to_wall()
 func wallslide_movement(delta):
 	pass
 	if Player.climb_input:
@@ -27,3 +29,5 @@ func wallslide_movement(delta):
 		player_movement()
 		Player.gravity(delta)
 		Player.velocity.y *= wallslide_friction
+func friction():
+	Player.velocity.y *= wallslide_friction

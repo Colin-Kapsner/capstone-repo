@@ -1,9 +1,10 @@
 extends "state.gd"
 
-@onready var CoyoteTimer = $CoyoteTimer
-@export var coyote_duration = .2
 
+@onready var CoyoteTimer = $CoyoteTimer
+@export var coyote_duration = 0.2
 var has_jump = true
+
 
 func update(delta):
 	Player.gravity(delta)
@@ -19,12 +20,11 @@ func update(delta):
 	return null
 
 func enter_state():
-	if Player.prev_state == STATES.MOVE or Player.prev_state == STATES.WALLSLIDE:
+	if Player.prev_state == STATES.MOVE or Player.prev_state == STATES.WALLSLIDE or Player.prev_state == STATES.IDLE:
 		has_jump = true
 		CoyoteTimer.start(coyote_duration)
 	else:
 		has_jump = false
-	pass
 
 
 func _on_coyote_timer_timeout():
