@@ -13,6 +13,7 @@ func exit_state():
 func update(delta):
 	return null
 
+# TODO MUST FIX - Whenever a state uses this, it clamps the players max speed to Player.SPEED
 func player_movement():
 	if Player.movement_input.x != 0:
 		Player.last_direction.x = Player.movement_input.x
