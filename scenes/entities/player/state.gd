@@ -21,5 +21,4 @@ func player_movement():
 	elif Player.movement_input.x < 0:
 		Player.velocity.x = move_toward(Player.velocity.x, -Player.SPEED, Player.acceleration)
 	elif Player.movement_input.x == 0 and Player.velocity.x != 0:
-			Player.velocity.x -= Player.friction
-		
+			Player.velocity.x = move_toward(Player.velocity.x, 0, Player.friction)

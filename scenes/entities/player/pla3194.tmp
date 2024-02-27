@@ -14,25 +14,32 @@
 [ext_resource type="Script" path="res://scenes/entities/player/SLIDE.gd" id="12_xep0n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0ij0r"]
-radius = 12.0
+radius = 16.0312
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_5l6i7")
 
 [node name="PlayerImg" type="Sprite2D" parent="."]
-position = Vector2(0.438562, 0.0484818)
-scale = Vector2(-0.0598981, -0.0604686)
+position = Vector2(-0.593997, 0)
+scale = Vector2(0.0770038, 0.0778264)
 texture = ExtResource("2_p0jjs")
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(1.025, 1.025)
 shape = SubResource("CircleShape2D_0ij0r")
 metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
 position_smoothing_speed = 6.0
+
+[node name="CoyoteTimer" type="Timer" parent="."]
+wait_time = 1.084
+one_shot = true
+
+[node name="WallJumpSlowTimer" type="Timer" parent="."]
+wait_time = 0.105
+one_shot = true
 
 [node name="STATES" type="Node" parent="."]
 script = ExtResource("3_1o1ar")
@@ -47,31 +54,12 @@ script = ExtResource("6_ot4r5")
 [node name="FALL" parent="STATES" instance=ExtResource("6_tfl4x")]
 
 [node name="DASH" parent="STATES" instance=ExtResource("9_1dnbd")]
+dash_duration = 0.2
 
 [node name="WALLSLIDE" parent="STATES" instance=ExtResource("10_pc4s1")]
 
 [node name="SLIDE" parent="STATES" instance=ExtResource("11_tc32x")]
 script = ExtResource("12_xep0n")
-
-[node name="Raycasts" type="Node2D" parent="."]
-
-[node name="Right" type="RayCast2D" parent="Raycasts"]
-target_position = Vector2(14, 0)
-collision_mask = 2
-
-[node name="Left" type="RayCast2D" parent="Raycasts"]
-target_position = Vector2(-14, 0)
-collision_mask = 2
-
-[node name="Timers" type="Node" parent="."]
-
-[node name="WallJumpSlowTimer" type="Timer" parent="Timers"]
-wait_time = 0.105
-one_shot = true
-
-[node name="CoyoteTimer" type="Timer" parent="Timers"]
-wait_time = 1.084
-one_shot = true
 
 [node name="Label" type="Label" parent="."]
 offset_left = -24.0
@@ -79,3 +67,13 @@ offset_top = -40.0
 offset_right = 23.0
 offset_bottom = -17.0
 text = "STATE"
+
+[node name="Raycasts" type="Node2D" parent="."]
+
+[node name="Right" type="RayCast2D" parent="Raycasts"]
+target_position = Vector2(18, 0)
+collision_mask = 2
+
+[node name="Left" type="RayCast2D" parent="Raycasts"]
+target_position = Vector2(-18, 0)
+collision_mask = 2

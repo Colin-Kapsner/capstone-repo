@@ -2,7 +2,7 @@ extends "state.gd"
 
 var dash_direction = Vector2.ZERO
 var dashing = false
-@export var dash_speed = 240
+@export var dash_speed = 400
 @export var dash_duration = .2
 @onready var DashDuration_timer = $DashDuration
 
@@ -12,6 +12,11 @@ func update(delta):
 		return STATES.FALL
 	if Player.get_next_to_wall() != null:
 		return STATES.WALLSLIDE
+	if dashing and Player.is_on_floor():
+		if Input.is_action_pressed("Slide"):
+			return $"../SLIDE"
+	if Player.is_on_floor() and Input.is_action_pressed("Jump"):
+		return STATES.JUMP
 	return null
 func enter_state():
 	dashing = true

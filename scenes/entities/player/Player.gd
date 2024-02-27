@@ -9,21 +9,22 @@ var climb_input = false
 var dash_input = false
 
 # player physics
-var SPEED = 325.0
+var SPEED = 250.0
 var gravity_var = 0
 var tile_size = 8
-var MAX_JUMP_HEIGHT = tile_size * 3 + .35
+var MAX_JUMP_HEIGHT = tile_size * 6 + .35
 var MIN_JUMP_HEIGHT = tile_size * 2 + .35
 var jump_duration = 0.3
 var spring_velocity
 var max_jump_velocity
 var min_jump_velocity
-
 var acceleration = 35
 var friction = 33
 var last_direction = Vector2.RIGHT
-var JUMP_VELOCITY = -450.0
+var last_wall_on = Vector2.ZERO
+var JUMP_VELOCITY = -500.0
 var wall_jump_velocity = -400.0
+
 # mechanics
 var has_dash = true
 
@@ -45,20 +46,21 @@ func _ready():
 	prev_state = STATES.IDLE
 	current_state = STATES.IDLE
 
+
+	
+func _physics_process(delta):
+	print(velocity.x)
+	player_input()
+	change_state(current_state.update(delta))
+	$Label.text = str(current_state.get_name)
+	move_and_slide()
+# TODO PHYSICS PROCESS ENDS HERE
+
 func  set_velocity_values():
 	gravity_var = 2 * MAX_JUMP_HEIGHT / pow(jump_duration,2)
 	max_jump_velocity = -sqrt(2 * gravity_var * MAX_JUMP_HEIGHT)
 	min_jump_velocity = -sqrt(2 * gravity_var * MIN_JUMP_HEIGHT)
 	# spring_velocity = -sqrt(2 * gravity_var * SPRING_JUMP_HEIGHT)
-	
-func _physics_process(delta):
-	player_input()
-	change_state(current_state.update(delta))
-	$Label.text = str(current_state.get_name)
-	move_and_slide()
-
-
-# TODO PHYSICS PROCESS ENDS HERE
 
 func gravity(delta):
 	if not is_on_floor():

@@ -1,6 +1,11 @@
 extends "state.gd"
 
 
+func enter_state():
+	Player.velocity.x = 0
+	Player.has_dash = true
+
+
 func update(delta):
 	Player.gravity(delta)
 	if Player.movement_input.x != 0:
@@ -12,5 +17,3 @@ func update(delta):
 	if Player.dash_input and Player.has_dash:
 		return STATES.DASH
 	return null
-func enter_state():
-	Player.has_dash = true

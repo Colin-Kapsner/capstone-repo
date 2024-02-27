@@ -1,6 +1,6 @@
 extends "state.gd"
 
-var last_wall_on = Vector2.ZERO
+
 @export var climb_speed = 50
 @export var wallslide_friction = .7
 
@@ -15,7 +15,7 @@ func update(delta):
 			return STATES.IDLE
 	return null
 func enter_state():
-	last_wall_on = Player.get_next_to_wall()
+	Player.last_wall_on = Player.get_next_to_wall()
 func wallslide_movement(delta):
 	pass
 	if Player.climb_input:
