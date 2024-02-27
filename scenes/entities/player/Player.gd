@@ -15,7 +15,6 @@ var tile_size = 8
 var MAX_JUMP_HEIGHT = tile_size * 6 + .35
 var MIN_JUMP_HEIGHT = tile_size * 2 + .35
 var jump_duration = 0.3
-var spring_velocity
 var max_jump_velocity
 var min_jump_velocity
 var acceleration = 35
@@ -49,8 +48,6 @@ func _ready():
 
 	
 func _physics_process(delta):
-	if current_state == STATES.MOVE:
-		print("move")
 	player_input()
 	change_state(current_state.update(delta))
 	$Label.text = str(current_state.get_name)

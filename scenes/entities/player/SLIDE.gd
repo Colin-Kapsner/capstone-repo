@@ -12,7 +12,9 @@ func update(delta):
 	if Input.is_action_pressed("Jump"):
 		Player.velocity.x += slide_jump_boost * slide_direction.x
 		return STATES.JUMP
-	if !Input.is_action_pressed("Slide") and Player.velocity.x <= Player.SPEED:
+	if Input.is_action_just_released("Slide") and Player.velocity.x <= Player.SPEED:
+		return STATES.MOVE
+	if Input.is_action_just_released("Slide") and Player.velocity.x >= Player.SPEED:
 		return STATES.MOVE
 	if Player.velocity.x == 0:
 		return STATES.IDLE

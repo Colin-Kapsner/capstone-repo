@@ -1,7 +1,8 @@
 extends "state.gd"
 
 var manipulated_jump = false
-# locking player movement after jump
+var has_jump = true
+# locking player movement after wall jump
 var wall_jump_lock = false
 
 
@@ -24,13 +25,20 @@ func jump_movement():
 			Player.velocity.y /= 2
 func enter_state():
 	Player.last_wall_on = Player.get_next_to_wall()
-	if Player.get_next_to_wall() != null and !Player.is_on_floor():
-		if Player.last_wall_on == Vector2.RIGHT:
-			Player.velocity.x = -Player.JUMP_VELOCITY / 2
-		else:
-			Player.velocity.x = Player.JUMP_VELOCITY / 2
-		wall_jump_lock = true
-	if !manipulated_jump:
+	if has_jump:
+		# Wall Jump
+		if Player.get_next_to_wall() != null and !Player.is_on_floor():
+			if Player.last_wall_on == Vector2.RIGHT:
+				Player.velocity.x = -Player.JUMP_VELOCITY / 2
+			else:
+				Player.velocity.x = Player.JUMP_VELOCITY / 2
+			wall_jump_lock = true
+			
+			# TODO OR PASSES THROUGH RESET
+		#elif Player.is_on_floor() or Player.get_next_to_wall() != null:
+		#	has_jump = true
+		#else:
+		#has_jump = false
 		Player.velocity.y += Player.max_jump_velocity
 func exit_state():
 	wall_jump_lock = false
