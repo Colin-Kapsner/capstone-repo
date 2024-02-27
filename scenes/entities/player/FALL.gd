@@ -18,8 +18,10 @@ func update(delta):
 	player_movement()
 	if Player.is_on_floor() and Player.velocity == Vector2.ZERO:
 		return STATES.IDLE
-	if Player.is_on_floor() and Player.movement_input.x != 0:
+	if Player.is_on_floor() and Player.movement_input.x != 0 and !Input.is_action_pressed("Slide"):
 		return STATES.MOVE
+	if Player.is_on_floor() and Input.is_action_pressed("Slide"):
+		return $"../SLIDE"
 	if Player.dash_input and Player.has_dash:
 		return STATES.DASH
 	if Player.get_next_to_wall() != null:
@@ -27,7 +29,6 @@ func update(delta):
 	if Player.jump_input_actuation and has_jump:
 		return STATES.JUMP
 	return null
-
 
 
 func _on_coyote_timer_timeout():

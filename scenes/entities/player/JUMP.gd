@@ -4,6 +4,7 @@ var manipulated_jump = false
 # locking player movement after jump
 var wall_jump_lock = false
 
+
 func update(delta):
 	Player.gravity(delta)
 	if !wall_jump_lock:
