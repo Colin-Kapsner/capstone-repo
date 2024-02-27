@@ -8,7 +8,7 @@ var wall_jump_lock = false
 
 func update(delta):
 	Player.gravity(delta)
-	if !wall_jump_lock:
+	if !wall_jump_lock and Player.prev_state != $"../SLIDE":
 		player_movement()
 	jump_movement()
 	if Player.velocity.y > 0:
@@ -25,6 +25,7 @@ func jump_movement():
 			Player.velocity.y /= 2
 func enter_state():
 	Player.last_wall_on = Player.get_next_to_wall()
+	
 	if has_jump:
 		# Wall Jump
 		if Player.get_next_to_wall() != null and !Player.is_on_floor():
@@ -33,9 +34,10 @@ func enter_state():
 			else:
 				Player.velocity.x = Player.JUMP_VELOCITY / 2
 			wall_jump_lock = true
-			
+		if Player.is_on_floor():
+			Player.has_dash = true
 			# TODO OR PASSES THROUGH RESET
-		#elif Player.is_on_floor() or Player.get_next_to_wall() != null:
+		#if Player.is_on_floor() or Player.get_next_to_wall() != null:
 		#	has_jump = true
 		#else:
 		#has_jump = false

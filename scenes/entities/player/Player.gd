@@ -13,11 +13,11 @@ var SPEED = 250.0
 var gravity_var = 0
 var tile_size = 8
 var MAX_JUMP_HEIGHT = tile_size * 6 + .35
-var MIN_JUMP_HEIGHT = tile_size * 2 + .35
+var MIN_JUMP_HEIGHT = tile_size * 2
 var jump_duration = 0.3
 var max_jump_velocity
 var min_jump_velocity
-var acceleration = 35
+var acceleration = 75
 var friction = 33
 var last_direction = Vector2.RIGHT
 var last_wall_on = Vector2.ZERO
@@ -46,11 +46,10 @@ func _ready():
 	current_state = STATES.IDLE
 
 
-	
 func _physics_process(delta):
 	player_input()
 	change_state(current_state.update(delta))
-	$Label.text = str(current_state.get_name)
+	$Label.text = str(current_state.get_name())
 	move_and_slide()
 # TODO PHYSICS PROCESS ENDS HERE
 

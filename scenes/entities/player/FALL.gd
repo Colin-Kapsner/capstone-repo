@@ -15,7 +15,8 @@ func enter_state():
 
 func update(delta):
 	Player.gravity(delta)
-	player_movement()
+	if !Input.is_action_pressed("Slide"):
+		player_movement()
 	if Player.is_on_floor() and Player.velocity == Vector2.ZERO:
 		return STATES.IDLE
 	if Player.is_on_floor() and Player.movement_input.x != 0 and !Input.is_action_pressed("Slide"):

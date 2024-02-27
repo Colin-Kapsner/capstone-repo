@@ -1,7 +1,6 @@
-res://scenes/entities/player/player.tscn
-res://addons/silent_wolf/assets/themes/sw_theme.tres
-res://scenes/entities/player/SLIDE.gd
 res://world.tscn
+res://addons/silent_wolf/assets/themes/sw_theme.tres
+res://scenes/entities/player/player.tscn
 res://scenes/entities/player/IDLE.tscn
 res://scenes/entities/player/FALL.tscn
 res://scenes/entities/player/JUMP.tscn
@@ -9,10 +8,10 @@ res://scenes/entities/player/MOVE.tscn
 res://scenes/entities/player/DASH.tscn
 res://scenes/entities/player/WALLSLIDE.tscn
 res://main.tscn
-res://login.tscn
-res://scenes/entities/maps/test.tscn
 res://scenes/entities/maps/worldmap.tscn
+res://scenes/entities/player/DASH.gd
+res://scenes/entities/player/SLIDE.gd
+res://scenes/entities/player/state.gd
+res://scenes/entities/player/Player.gd
 res://scenes/entities/player/FALL.gd
 res://scenes/entities/player/JUMP.gd
-res://scenes/entities/player/IDLE.gd
-res://scenes/entities/player/Player.gd

@@ -2,8 +2,8 @@ extends "state.gd"
 
 var slide_direction = Vector2.ZERO
 var slide_friction = 5
-var slide_boost = 600
-var slide_jump_boost = 400
+var slide_boost = 150
+var slide_jump_boost = 100
 var sliding = false
 
 func update(delta):
@@ -28,7 +28,7 @@ func enter_state():
 		slide_direction = Player.movement_input
 	else:
 		slide_direction = Player.last_direction
-	Player.velocity = slide_direction.normalized() * slide_boost
+	Player.velocity.x += slide_direction.x * slide_boost
 func exit_state():
 	sliding = false
 func slide_movement():
