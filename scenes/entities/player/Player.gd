@@ -74,6 +74,11 @@ func change_state(input_state):
 func player_input():
 	movement_input = Vector2.ZERO
 	
+	if Input.is_action_just_pressed("Menu"):
+		get_tree().change_scene_to_file("res://main.tscn")
+	if Input.is_action_just_pressed("Restart"):
+		position.x = 0
+		position.y = 0
 	if Input.is_action_pressed("MoveRight"):
 		movement_input.x += 1
 	if Input.is_action_pressed("MoveLeft"):
