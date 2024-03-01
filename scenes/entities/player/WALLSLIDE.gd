@@ -15,6 +15,7 @@ func update(delta):
 			return STATES.IDLE
 	return null
 func enter_state():
+	Player.has_dash = true
 	Player.last_wall_on = Player.get_next_to_wall()
 func wallslide_movement(delta):
 	pass
