@@ -9,7 +9,7 @@ var climb_input = false
 var dash_input = false
 
 # player physics
-var SPEED = 245.0
+var SPEED = 260.0
 var gravity_var = 0
 var tile_size = 8
 var MAX_JUMP_HEIGHT = tile_size * 6

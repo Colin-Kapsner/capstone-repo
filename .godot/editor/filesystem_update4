@@ -11,3 +11,4 @@ res://main.tscn
 res://scenes/entities/maps/worldmap.tscn
 res://scenes/entities/player/WALLSLIDE.gd
 res://scenes/entities/player/DASH.gd
+res://scenes/entities/player/Player.gd
