@@ -9,10 +9,10 @@ var climb_input = false
 var dash_input = false
 
 # player physics
-var SPEED = 250.0
+var SPEED = 245.0
 var gravity_var = 0
 var tile_size = 8
-var MAX_JUMP_HEIGHT = tile_size * 6 + .35
+var MAX_JUMP_HEIGHT = tile_size * 6
 var MIN_JUMP_HEIGHT = tile_size * 2
 var jump_duration = 0.3
 var max_jump_velocity
@@ -26,6 +26,7 @@ var wall_jump_velocity = -400.0
 
 # mechanics
 var has_dash = true
+var has_jump = true
 
 # state stuff
 var current_state = null
@@ -47,6 +48,8 @@ func _ready():
 
 
 func _physics_process(delta):
+	if current_state == STATES.FALL:
+		SPEED = 160
 	player_input()
 	change_state(current_state.update(delta))
 	$Label.text = str(current_state.get_name())

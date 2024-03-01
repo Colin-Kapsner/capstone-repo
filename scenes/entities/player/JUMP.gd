@@ -1,11 +1,11 @@
 extends "state.gd"
 
 var manipulated_jump = false
-var has_jump = true
+
 # locking player movement after wall jump
 var wall_jump_lock = false
 
-
+# TODO need fixed jump distance when walljumping
 func update(delta):
 	Player.gravity(delta)
 	if !wall_jump_lock and Player.prev_state != $"../SLIDE":
@@ -15,6 +15,10 @@ func update(delta):
 		return STATES.FALL
 	if Player.dash_input and Player.has_dash:
 		return STATES.DASH
+	if Player.jump_input_actuation:
+		return STATES.JUMP
+	if Player.prev_state == STATES.WALLSLIDE:
+		Player.has_jump = true
 	return null
 
 func jump_movement():
@@ -25,9 +29,7 @@ func jump_movement():
 			Player.velocity.y /= 2
 func enter_state():
 	Player.last_wall_on = Player.get_next_to_wall()
-	
-	if has_jump:
-		# Wall Jump
+	if Player.has_jump:
 		if Player.get_next_to_wall() != null and !Player.is_on_floor():
 			if Player.last_wall_on == Vector2.RIGHT:
 				Player.velocity.x = -Player.JUMP_VELOCITY / 2
@@ -36,12 +38,12 @@ func enter_state():
 			wall_jump_lock = true
 		if Player.is_on_floor():
 			Player.has_dash = true
-			# TODO OR PASSES THROUGH RESET
-		#if Player.is_on_floor() or Player.get_next_to_wall() != null:
-		#	has_jump = true
-		#else:
-		#has_jump = false
-		Player.velocity.y += Player.max_jump_velocity
+			Player.has_jump = true
+		else: # (is not on floor)
+			Player.has_jump = false
+		# Jump
+		Player.velocity.y = Player.max_jump_velocity
+		
 func exit_state():
 	wall_jump_lock = false
 	manipulated_jump = false

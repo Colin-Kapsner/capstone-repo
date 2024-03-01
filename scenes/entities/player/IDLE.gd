@@ -16,4 +16,6 @@ func update(delta):
 		return STATES.FALL
 	if Player.dash_input and Player.has_dash:
 		return STATES.DASH
+	if Player.is_on_floor() and Input.is_action_pressed("Jump"):
+		return STATES.JUMP
 	return null

@@ -9,7 +9,7 @@ func update(delta):
 		return STATES.IDLE
 	if Player.velocity.y > 0:
 		return STATES.FALL
-	if Player.jump_input_actuation:
+	if Player.is_on_floor() and Input.is_action_pressed("Jump"):
 		return STATES.JUMP
 	if Player.dash_input and Player.has_dash:
 		return STATES.DASH

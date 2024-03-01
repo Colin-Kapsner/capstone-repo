@@ -10,6 +10,7 @@ var dash_slide_boost = 100
 
 func update(delta):
 	if !dashing:
+		Player.velocity.x = 0
 		return STATES.FALL
 	if Player.get_next_to_wall() != null:
 		return STATES.WALLSLIDE
