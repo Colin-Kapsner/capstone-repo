@@ -7,7 +7,7 @@ func _ready():
 	
   SilentWolf.configure({
 	"api_key": "gQtwlLUAJ36ZSoEKr4Gc820Vq6ds0Pmd6igerDf9",
-	"game_id": "test10",
+	"game_id": "test22",
 	"log_level": 1
   })
 

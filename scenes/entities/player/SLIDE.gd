@@ -6,6 +6,18 @@ var slide_boost = 150
 var slide_jump_boost = 100
 var sliding = false
 
+
+func enter_state():
+	Player.has_double_jumped = false
+	sliding = true
+	if Player.movement_input != Vector2.ZERO:
+		slide_direction = Player.movement_input
+	else:
+		slide_direction = Player.last_direction
+	Player.velocity.x += slide_direction.x * slide_boost
+
+
+
 func update(delta):
 	Player.gravity(delta)
 	slide_movement()
@@ -21,14 +33,8 @@ func update(delta):
 	if !sliding:
 		return STATES.FALL
 	return null
-func enter_state():
-	sliding = true
-	Player.has_dash = false
-	if Player.movement_input != Vector2.ZERO:
-		slide_direction = Player.movement_input
-	else:
-		slide_direction = Player.last_direction
-	Player.velocity.x += slide_direction.x * slide_boost
+
+
 func exit_state():
 	sliding = false
 func slide_movement():

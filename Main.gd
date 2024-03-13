@@ -1,6 +1,6 @@
 extends Node2D
 
-var player_name
+var player_name = "John Doe"
 var time = randi() % 101
 @onready var leaderboard_scene = preload("res://addons/silent_wolf/Scores/Leaderboard.tscn")
 

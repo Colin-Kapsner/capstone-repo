@@ -4,6 +4,7 @@ extends "state.gd"
 func enter_state():
 	Player.velocity.x = 0
 	Player.has_dash = true
+	Player.has_double_jumped = false
 
 
 func update(delta):
@@ -16,6 +17,4 @@ func update(delta):
 		return STATES.FALL
 	if Player.dash_input and Player.has_dash:
 		return STATES.DASH
-	if Player.is_on_floor() and Input.is_action_pressed("Jump"):
-		return STATES.JUMP
 	return null

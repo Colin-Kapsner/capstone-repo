@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 
+
 # player input
 var movement_input = Vector2.ZERO
 var jump_input = false
@@ -26,17 +27,28 @@ var wall_jump_velocity = -400.0
 
 # mechanics
 var has_dash = true
-var has_jump = true
+var has_double_jumped = false
 
 # state stuff
 var current_state = null
 var prev_state = null
 
+# timer stuff
+var counting = false
+var time_elapsed := 0.0
+var counter = 1
+
 # nodes
 @onready var STATES = $STATES
 @onready var Raycasts = $Raycasts
+@onready var player_time = $"../PlayerTime".get_wait_time()
 
-
+func _process(delta: float) -> void:
+	if counting:
+		time_elapsed += delta
+		$Label.text = str(time_elapsed).pad_decimals(3)
+	else:
+		pass
 
 func _ready():
 	set_velocity_values()
@@ -46,13 +58,20 @@ func _ready():
 	prev_state = STATES.IDLE
 	current_state = STATES.IDLE
 
-
 func _physics_process(delta):
-	if current_state == STATES.FALL:
-		SPEED = 160
+	# debug
+	if jump_input_actuation:
+		print("current state: " + current_state.get_name())
+		print("jump input: true")
+	else:
+		print(".")
+	# actual code
+	cam_physics()
 	player_input()
 	change_state(current_state.update(delta))
-	$Label.text = str(current_state.get_name())
+	# temporary debug
+	$"current state".text = str(current_state.get_name())
+	$has_dash.text = str(has_dash)
 	move_and_slide()
 # TODO PHYSICS PROCESS ENDS HERE
 
@@ -90,7 +109,7 @@ func player_input():
 		movement_input.y -= 1
 	if Input.is_action_pressed("MoveDown"):
 		movement_input.y += 1
-		
+
 	# jump
 	if Input.is_action_pressed("Jump"):
 		jump_input = true
@@ -122,5 +141,22 @@ func get_next_to_wall():
 			else:
 				return Vector2.LEFT
 	return null
+
+func cam_physics():
+	if velocity.x >= 401:
+		$Camera2D.offset.x = move_toward($Camera2D.offset.x, 300, 4)
+	elif velocity.x <= -401:
+		$Camera2D.offset.x = move_toward($Camera2D.offset.x, -300, 4)
+	else:
+		$Camera2D.offset.x = move_toward($Camera2D.offset.x, 0, 3)
+
+
+func _on_start_timer_body_entered(body):
+	time_elapsed = 0
+	counting = true
+
+
+func _on_end_timer_body_entered(body):
+	counting = false
 
 
