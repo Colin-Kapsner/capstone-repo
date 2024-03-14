@@ -19,6 +19,6 @@ func update(delta):
 		return STATES.JUMP
 	if Player.dash_input and Player.has_dash:
 		return STATES.DASH
-	if Player.slide_input:
+	if Input.is_action_pressed("Slide"):
 		return $"../SLIDE"
 	return null

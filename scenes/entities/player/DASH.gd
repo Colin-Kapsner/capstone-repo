@@ -15,7 +15,7 @@ func update(delta):
 	if Player.get_next_to_wall() != null:
 		return STATES.WALLSLIDE
 	if dashing and Player.is_on_floor():
-		if Player.slide_input:
+		if Input.is_action_pressed("Slide"):
 			Player.velocity.x += dash_direction.x * dash_slide_boost
 			return $"../SLIDE"
 	return null

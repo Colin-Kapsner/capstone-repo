@@ -8,7 +8,6 @@ var jump_input = false
 var jump_input_actuation = false
 var climb_input = false
 var dash_input = false
-var slide_input = false
 
 # player physics
 var SPEED = 260.0
@@ -28,7 +27,6 @@ var wall_jump_velocity = -400.0
 
 # mechanics
 var has_dash = true
-# this simplifies double jump and makes jumping normally easy to think about by only returning the jump state from states the player can jump from
 var has_double_jumped = false
 
 # state stuff
@@ -48,7 +46,7 @@ var counter = 1
 func _process(delta: float) -> void:
 	if counting:
 		time_elapsed += delta
-		$"../HUD/Control/Time".text = str(time_elapsed).pad_decimals(3)
+		$Label.text = str(time_elapsed).pad_decimals(3)
 	else:
 		pass
 
@@ -66,13 +64,14 @@ func _physics_process(delta):
 		print("current state: " + current_state.get_name())
 		print("jump input: true")
 	else:
-		pass
+		print(".")
 	# actual code
 	cam_physics()
 	player_input()
 	change_state(current_state.update(delta))
 	# temporary debug
 	$"current state".text = str(current_state.get_name())
+	$has_dash.text = str(has_dash)
 	move_and_slide()
 # TODO PHYSICS PROCESS ENDS HERE
 
@@ -121,17 +120,17 @@ func player_input():
 	else:
 		jump_input_actuation = false
 
+	# climb
+	if Input.is_action_pressed("Climb"):
+		climb_input = true
+	else: 
+		climb_input = false
+
 	# dash
 	if Input.is_action_just_pressed("Dash"):
 		dash_input = true
 	else: 
 		dash_input = false
-	
-	# slide
-	if Input.is_action_pressed("Slide"):
-		slide_input = true
-	else:
-		slide_input = false
 
 func get_next_to_wall():
 	for raycast in Raycasts.get_children():
@@ -144,10 +143,10 @@ func get_next_to_wall():
 	return null
 
 func cam_physics():
-	if velocity.x >= 425:
-		$Camera2D.offset.x = move_toward($Camera2D.offset.x, 300, 3)
-	elif velocity.x <= -425:
-		$Camera2D.offset.x = move_toward($Camera2D.offset.x, -300, 3)
+	if velocity.x >= 401:
+		$Camera2D.offset.x = move_toward($Camera2D.offset.x, 300, 4)
+	elif velocity.x <= -401:
+		$Camera2D.offset.x = move_toward($Camera2D.offset.x, -300, 4)
 	else:
 		$Camera2D.offset.x = move_toward($Camera2D.offset.x, 0, 3)
 
@@ -161,5 +160,3 @@ func _on_end_timer_body_entered(body):
 	counting = false
 
 
-func _on_reset_body_entered(body):
-	has_double_jumped = false

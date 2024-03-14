@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://bj3ynq22kuhh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_16nq2"]
+size = Vector2(243, 20)
+
+[node name="Platform_flat_short" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(111.5, 0)
+shape = SubResource("RectangleShape2D_16nq2")
+one_way_collision = true
+
+[node name="Panel" type="Panel" parent="CollisionShape2D"]
+offset_left = -121.5
+offset_top = -10.0
+offset_right = 121.5
+offset_bottom = 10.0

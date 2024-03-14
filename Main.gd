@@ -5,7 +5,7 @@ var time = randi() % 101
 @onready var leaderboard_scene = preload("res://addons/silent_wolf/Scores/Leaderboard.tscn")
 
 func _on_play_pressed():
-	get_tree().change_scene_to_file("res://scenes/entities/maps/world.tscn")
+	get_tree().change_scene_to_file("res://world.tscn")
 
 func _on_quit_pressed():
 	get_tree().quit()

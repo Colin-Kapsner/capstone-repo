@@ -25,10 +25,6 @@ func enter_state():
 # TODO need fixed jump distance when walljumping
 func update(delta):
 	Player.gravity(delta)
-	if Player.jump_input_actuation and !Player.has_double_jumped:
-		print("returning jump state from jump state")
-		Player.has_double_jumped = true
-		return STATES.JUMP
 	if !wall_jump_lock and Player.prev_state != $"../SLIDE":
 		player_movement()
 	jump_movement()
@@ -36,6 +32,10 @@ func update(delta):
 		return STATES.FALL
 	if Player.dash_input and Player.has_dash:
 		return STATES.DASH
+	if Player.jump_input_actuation and !Player.has_double_jumped:
+		print("returning jump state from jump state")
+		Player.has_double_jumped = true
+		return STATES.JUMP
 	if Player.is_on_floor():
 		return STATES.MOVE
 	return null
