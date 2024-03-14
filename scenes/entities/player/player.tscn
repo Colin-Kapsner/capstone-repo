@@ -31,7 +31,6 @@ shape = SubResource("CircleShape2D_0ij0r")
 metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(200, 0)
 zoom = Vector2(1.5, 1.5)
 limit_smoothed = true
 position_smoothing_enabled = true
@@ -67,12 +66,12 @@ collision_mask = 3
 
 [node name="Timers" type="Node" parent="."]
 
-[node name="WallJumpSlowTimer" type="Timer" parent="Timers"]
-wait_time = 0.105
-one_shot = true
-
 [node name="CoyoteTimer" type="Timer" parent="Timers"]
 wait_time = 1.084
+one_shot = true
+
+[node name="WallJumpSlowTimer" type="Timer" parent="Timers"]
+wait_time = 0.105
 one_shot = true
 
 [node name="current state" type="Label" parent="."]
@@ -81,17 +80,3 @@ offset_top = -40.0
 offset_right = 23.0
 offset_bottom = -17.0
 text = "STATE"
-
-[node name="has_jump" type="Label" parent="."]
-offset_left = -20.0
-offset_top = -78.0
-offset_right = 27.0
-offset_bottom = -55.0
-text = "JUMP"
-
-[node name="has_dash" type="Label" parent="."]
-offset_left = -23.0
-offset_top = -58.0
-offset_right = 24.0
-offset_bottom = -35.0
-text = "DASH"
