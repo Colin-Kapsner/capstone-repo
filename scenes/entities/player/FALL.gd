@@ -16,6 +16,10 @@ func enter_state():
 func update(delta):
 	Player.SPEED = 160
 	Player.gravity(delta)
+	if Player.jump_input_actuation and !Player.has_double_jumped:
+		print("returning jump state from fall state")
+		Player.has_double_jumped = true
+		return STATES.JUMP
 	if !Input.is_action_pressed("Slide"):
 		player_movement()
 	if Player.is_on_floor() and Player.velocity == Vector2.ZERO:
@@ -28,10 +32,7 @@ func update(delta):
 		return STATES.DASH
 	if Player.get_next_to_wall() != null:
 		return STATES.WALLSLIDE
-	if Player.jump_input_actuation and !Player.has_double_jumped:
-		print("returning jump state from fall state")
-		Player.has_double_jumped = true
-		return STATES.JUMP
+	
 	return null
 
 

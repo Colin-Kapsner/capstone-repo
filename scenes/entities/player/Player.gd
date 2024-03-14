@@ -44,11 +44,8 @@ var counter = 1
 @onready var player_time = $"../PlayerTime".get_wait_time()
 
 func _process(delta: float) -> void:
-	if counting:
-		time_elapsed += delta
-		$Label.text = str(time_elapsed).pad_decimals(3)
-	else:
-		pass
+	timer_logic(delta)
+	
 
 func _ready():
 	set_velocity_values()
@@ -59,21 +56,13 @@ func _ready():
 	current_state = STATES.IDLE
 
 func _physics_process(delta):
-	# debug
-	if jump_input_actuation:
-		print("current state: " + current_state.get_name())
-		print("jump input: true")
-	else:
-		print(".")
-	# actual code
 	cam_physics()
 	player_input()
 	change_state(current_state.update(delta))
 	# temporary debug
 	$"current state".text = str(current_state.get_name())
-	$has_dash.text = str(has_dash)
 	move_and_slide()
-# TODO PHYSICS PROCESS ENDS HERE
+# TODO PHYSICS PROCESS END
 
 func  set_velocity_values():
 	gravity_var = 2 * MAX_JUMP_HEIGHT / pow(jump_duration,2)
@@ -155,8 +144,13 @@ func _on_start_timer_body_entered(body):
 	time_elapsed = 0
 	counting = true
 
-
 func _on_end_timer_body_entered(body):
 	counting = false
 
+func timer_logic(delta: float):
+	if counting:
+		time_elapsed += delta
+		$Label.text = str(time_elapsed).pad_decimals(3)
+	else:
+		pass
 
