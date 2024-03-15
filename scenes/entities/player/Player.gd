@@ -6,11 +6,11 @@ extends CharacterBody2D
 var movement_input = Vector2.ZERO
 var jump_input = false
 var jump_input_actuation = false
-var climb_input = false
+var slide_input = false
 var dash_input = false
 
-# player physics
-var SPEED = 260.0
+# Misc
+var SPEED = 245.0
 var gravity_var = 0
 var tile_size = 8
 var MAX_JUMP_HEIGHT = tile_size * 6
@@ -27,7 +27,7 @@ var wall_jump_velocity = -400.0
 
 # mechanics
 var has_dash = true
-var has_double_jumped = false
+var has_jump = true
 
 # state stuff
 var current_state = null
@@ -41,14 +41,13 @@ var counter = 1
 # nodes
 @onready var STATES = $STATES
 @onready var Raycasts = $Raycasts
-@onready var player_time = $"../PlayerTime".get_wait_time()
+@onready var player_time = $"../Timer Stuff/PlayerTime".get_wait_time()
 
 func _process(delta: float) -> void:
 	timer_logic(delta)
-	
 
 func _ready():
-	get_window().mode = Window.MODE_FULLSCREEN
+	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_HIDDEN)
 	set_velocity_values()
 	for state in STATES.get_children():
 		state.STATES = STATES
@@ -62,10 +61,10 @@ func _physics_process(delta):
 	change_state(current_state.update(delta))
 	# temporary debug
 	$"current state".text = str(current_state.get_name())
+	$Label.text = str(has_jump)
 	move_and_slide()
-# TODO PHYSICS PROCESS END
 
-func  set_velocity_values():
+func set_velocity_values():
 	gravity_var = 2 * MAX_JUMP_HEIGHT / pow(jump_duration,2)
 	max_jump_velocity = -sqrt(2 * gravity_var * MAX_JUMP_HEIGHT)
 	min_jump_velocity = -sqrt(2 * gravity_var * MIN_JUMP_HEIGHT)
@@ -85,9 +84,9 @@ func change_state(input_state):
 
 func player_input():
 	movement_input = Vector2.ZERO
-	
 	if Input.is_action_just_pressed("Menu"):
 		get_tree().change_scene_to_file("res://main.tscn")
+		DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
 	if Input.is_action_just_pressed("Restart"):
 		position.x = 0
 		position.y = 0
@@ -111,10 +110,10 @@ func player_input():
 		jump_input_actuation = false
 
 	# climb
-	if Input.is_action_pressed("Climb"):
-		climb_input = true
+	if Input.is_action_pressed("Slide"):
+		slide_input = true
 	else: 
-		climb_input = false
+		slide_input = false
 
 	# dash
 	if Input.is_action_just_pressed("Dash"):
@@ -133,13 +132,12 @@ func get_next_to_wall():
 	return null
 
 func cam_physics():
-	if velocity.x >= 401:
-		$Camera2D.offset.x = move_toward($Camera2D.offset.x, 300, 4)
-	elif velocity.x <= -401:
-		$Camera2D.offset.x = move_toward($Camera2D.offset.x, -300, 4)
+	if velocity.x >= 450:
+		$Camera2D.offset.x = move_toward($Camera2D.offset.x, 400, 3.5)
+	elif velocity.x <= -450:
+		$Camera2D.offset.x = move_toward($Camera2D.offset.x, -300, 3)
 	else:
 		$Camera2D.offset.x = move_toward($Camera2D.offset.x, 125, 3)
-
 
 func _on_start_timer_body_entered(body):
 	time_elapsed = 0
@@ -151,7 +149,6 @@ func _on_end_timer_body_entered(body):
 func timer_logic(delta: float):
 	if counting:
 		time_elapsed += delta
-		$"../CanvasLayer/Control/Time".text = str(time_elapsed).pad_decimals(3)
+		$"../HUD/Control/Time".text = str(time_elapsed).pad_decimals(3)
 	else:
 		pass
-

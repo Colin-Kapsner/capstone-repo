@@ -16,3 +16,8 @@ res://scenes/entities/player/JUMP.gd
 res://scenes/entities/player/Player.gd
 res://scenes/entities/player/WALLSLIDE.gd
 res://scenes/entities/player/state.gd
+res://Main.gd
+res://scenes/entities/player/IDLE.gd
+res://scenes/entities/player/MOVE.gd
+res://scenes/entities/player/SLIDE.gd
+res://scenes/entities/player/DASH.gd

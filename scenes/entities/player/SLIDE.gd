@@ -8,8 +8,8 @@ var sliding = false
 
 
 func enter_state():
-	Player.has_double_jumped = false
 	sliding = true
+	Player.has_jump = true
 	if Player.movement_input != Vector2.ZERO:
 		slide_direction = Player.movement_input
 	else:
@@ -21,7 +21,7 @@ func enter_state():
 func update(delta):
 	Player.gravity(delta)
 	slide_movement()
-	if Input.is_action_pressed("Jump"):
+	if Player.jump_input_actuation and Player.has_jump:
 		Player.velocity.x += slide_jump_boost * slide_direction.x
 		return STATES.JUMP
 	if Input.is_action_just_released("Slide") and Player.velocity.x <= Player.SPEED:
