@@ -35,9 +35,6 @@ offset = Vector2(125, 0)
 zoom = Vector2(1.5, 1.5)
 limit_smoothed = true
 position_smoothing_enabled = true
-drag_horizontal_enabled = true
-drag_left_margin = 0.1
-drag_right_margin = 0.1
 
 [node name="STATES" type="Node" parent="."]
 script = ExtResource("3_1o1ar")

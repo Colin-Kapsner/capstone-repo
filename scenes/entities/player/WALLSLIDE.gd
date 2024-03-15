@@ -14,7 +14,6 @@ func update(delta):
 	player_movement()
 	Player.gravity(delta)
 	Player.velocity.y *= wallslide_friction
-	Player.velocity.y *= wallslide_friction
 	if Player.get_next_to_wall() == null:
 		return STATES.FALL
 	if Input.is_action_just_pressed("Jump"):

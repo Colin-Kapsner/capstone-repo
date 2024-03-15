@@ -323,4 +323,3 @@ sources/0 = SubResource("TileSetAtlasSource_kbpm7")
 [node name="TileMap" type="TileMap"]
 tile_set = SubResource("TileSet_fbdd1")
 format = 2
-layer_0/tile_data = PackedInt32Array(0, 458752, 2, 1, 458752, 2, 2, 458752, 2, 3, 458752, 2, 4, 458752, 2, 5, 458752, 2, 6, 458752, 2, 7, 458752, 2, 8, 458752, 2, 9, 458752, 2, 10, 458752, 2, 11, 458752, 2, 12, 458752, 2, 13, 458752, 2, 14, 458752, 2)

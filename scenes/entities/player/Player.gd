@@ -48,6 +48,7 @@ func _process(delta: float) -> void:
 	
 
 func _ready():
+	get_window().mode = Window.MODE_FULLSCREEN
 	set_velocity_values()
 	for state in STATES.get_children():
 		state.STATES = STATES
@@ -137,7 +138,7 @@ func cam_physics():
 	elif velocity.x <= -401:
 		$Camera2D.offset.x = move_toward($Camera2D.offset.x, -300, 4)
 	else:
-		$Camera2D.offset.x = move_toward($Camera2D.offset.x, 0, 3)
+		$Camera2D.offset.x = move_toward($Camera2D.offset.x, 125, 3)
 
 
 func _on_start_timer_body_entered(body):
@@ -150,7 +151,7 @@ func _on_end_timer_body_entered(body):
 func timer_logic(delta: float):
 	if counting:
 		time_elapsed += delta
-		$Label.text = str(time_elapsed).pad_decimals(3)
+		$"../CanvasLayer/Control/Time".text = str(time_elapsed).pad_decimals(3)
 	else:
 		pass
 

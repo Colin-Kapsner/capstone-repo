@@ -8,13 +8,12 @@ var wall_jump_lock = false
 
 func enter_state():
 	Player.last_wall_on = Player.get_next_to_wall()
-	print("entering jump state")
 	# If on wall and in air
 	if Player.get_next_to_wall() != null and !Player.is_on_floor():
 		if Player.last_wall_on == Vector2.RIGHT:
-			Player.velocity.x = -Player.JUMP_VELOCITY / 2
+			Player.velocity.x = -Player.JUMP_VELOCITY
 		else:
-			Player.velocity.x = Player.JUMP_VELOCITY / 2
+			Player.velocity.x = Player.JUMP_VELOCITY
 		wall_jump_lock = true
 	if Player.is_on_floor():
 		Player.has_dash = true
@@ -26,7 +25,6 @@ func enter_state():
 func update(delta):
 	Player.gravity(delta)
 	if Player.jump_input_actuation and !Player.has_double_jumped:
-		print("returning jump state from jump state")
 		Player.has_double_jumped = true
 		return STATES.JUMP
 	if !wall_jump_lock and Player.prev_state != $"../SLIDE":

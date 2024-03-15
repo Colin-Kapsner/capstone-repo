@@ -8,16 +8,16 @@ var has_jump = true
 func enter_state():
 	if Player.prev_state == STATES.MOVE or Player.prev_state == STATES.WALLSLIDE or Player.prev_state == STATES.IDLE:
 		has_jump = true
-		CoyoteTimer.start(coyote_duration)
+		CoyoteTimer.start(float(coyote_duration))
 	else:
 		has_jump = false
 
 
 func update(delta):
+	player_air_movement()
 	Player.SPEED = 160
 	Player.gravity(delta)
 	if Player.jump_input_actuation and !Player.has_double_jumped:
-		print("returning jump state from fall state")
 		Player.has_double_jumped = true
 		return STATES.JUMP
 	if !Input.is_action_pressed("Slide"):

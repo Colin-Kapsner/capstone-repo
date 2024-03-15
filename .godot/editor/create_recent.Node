@@ -1,4 +1,7 @@
 Label
+Control
+CanvasLayer
+CanvasGroup
 ProgressBar
 Timer
 CollisionShape2D
@@ -9,6 +12,3 @@ Node
 TileMap
 LineEdit
 RayCast2D
-Node2D
-Camera2D
-Button
