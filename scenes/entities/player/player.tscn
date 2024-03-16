@@ -65,8 +65,24 @@ script = ExtResource("12_xep0n")
 target_position = Vector2(14.875, 0)
 collision_mask = 3
 
+[node name="Right2" type="RayCast2D" parent="Raycasts"]
+target_position = Vector2(12, -8)
+collision_mask = 3
+
+[node name="Right3" type="RayCast2D" parent="Raycasts"]
+target_position = Vector2(12, 8)
+collision_mask = 3
+
 [node name="Left" type="RayCast2D" parent="Raycasts"]
 target_position = Vector2(-14.875, 0)
+collision_mask = 3
+
+[node name="Left2" type="RayCast2D" parent="Raycasts"]
+target_position = Vector2(-12, -8)
+collision_mask = 3
+
+[node name="Left3" type="RayCast2D" parent="Raycasts"]
+target_position = Vector2(-12, 8)
 collision_mask = 3
 
 [node name="Timers" type="Node" parent="."]
@@ -82,9 +98,8 @@ offset_right = 23.0
 offset_bottom = -17.0
 text = "STATE"
 
-[node name="Label" type="Label" parent="."]
-offset_left = -23.0
-offset_top = -84.0
-offset_right = 17.0
-offset_bottom = -61.0
-text = "HAS JUMP"
+[node name="GhostTimer" type="Timer" parent="."]
+wait_time = 0.14
+autostart = true
+
+[connection signal="timeout" from="GhostTimer" to="." method="_on_ghost_timer_timeout"]

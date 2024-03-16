@@ -38,14 +38,19 @@ var counting = false
 var time_elapsed := 0.0
 var counter = 1
 
-# nodes
+# other
 @onready var STATES = $STATES
 @onready var Raycasts = $Raycasts
 @onready var player_time = $"../Timer Stuff/PlayerTime".get_wait_time()
+	# ghost
+@export var ghost_node : PackedScene
+@onready var ghost_timer = $GhostTimer
 
+# Always happening
 func _process(delta: float) -> void:
 	timer_logic(delta)
 
+# When the Player loads in
 func _ready():
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_HIDDEN)
 	set_velocity_values()
@@ -55,25 +60,28 @@ func _ready():
 	prev_state = STATES.IDLE
 	current_state = STATES.IDLE
 
+# While there is physics
 func _physics_process(delta):
 	cam_physics()
 	player_input()
 	change_state(current_state.update(delta))
 	# temporary debug
 	$"current state".text = str(current_state.get_name())
-	$Label.text = str(has_jump)
 	move_and_slide()
 
+# Setting some values (probably not necessary)
 func set_velocity_values():
 	gravity_var = 2 * MAX_JUMP_HEIGHT / pow(jump_duration,2)
 	max_jump_velocity = -sqrt(2 * gravity_var * MAX_JUMP_HEIGHT)
 	min_jump_velocity = -sqrt(2 * gravity_var * MIN_JUMP_HEIGHT)
 	# spring_velocity = -sqrt(2 * gravity_var * SPRING_JUMP_HEIGHT)
 
+# Gravity...
 func gravity(delta):
 	if not is_on_floor():
 		velocity.y += gravity_var * delta
 
+# Entering, Updating, and Exiting states
 func change_state(input_state):
 	if input_state != null:
 		prev_state = current_state
@@ -82,6 +90,7 @@ func change_state(input_state):
 		prev_state.exit_state()
 		current_state.enter_state()
 
+# Recording all player input
 func player_input():
 	movement_input = Vector2.ZERO
 	if Input.is_action_just_pressed("Menu"):
@@ -121,6 +130,7 @@ func player_input():
 	else: 
 		dash_input = false
 
+# Using raycasts to determine if the player is next to a wall
 func get_next_to_wall():
 	for raycast in Raycasts.get_children():
 		raycast.force_raycast_update()
@@ -131,6 +141,7 @@ func get_next_to_wall():
 				return Vector2.LEFT
 	return null
 
+# Camera functionality
 func cam_physics():
 	if velocity.x >= 450:
 		$Camera2D.offset.x = move_toward($Camera2D.offset.x, 400, 3.5)
@@ -139,16 +150,24 @@ func cam_physics():
 	else:
 		$Camera2D.offset.x = move_toward($Camera2D.offset.x, 125, 3)
 
+# This is all timer stuff
 func _on_start_timer_body_entered(body):
 	time_elapsed = 0
 	counting = true
-
 func _on_end_timer_body_entered(body):
 	counting = false
-
 func timer_logic(delta: float):
 	if counting:
 		time_elapsed += delta
 		$"../HUD/Control/Time".text = str(time_elapsed).pad_decimals(3)
 	else:
 		pass
+
+
+func add_ghost():
+	var ghost = ghost_node.instantiate()
+	ghost.set_property(position, $PlayerImg.scale)
+	get_tree().current_scene.add_child(ghost)
+
+func _on_ghost_timer_timeout():
+	add_ghost()

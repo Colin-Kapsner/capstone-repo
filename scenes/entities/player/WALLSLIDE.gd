@@ -5,6 +5,7 @@ extends "state.gd"
 
 
 func enter_state():
+	Player.has_jump = true
 	Player.last_wall_on = Player.get_next_to_wall()
 
 func update(delta):
@@ -13,7 +14,7 @@ func update(delta):
 	Player.velocity.y *= wallslide_friction
 	if Player.get_next_to_wall() == null:
 		return STATES.FALL
-	if Player.jump_input_actuation:
+	if Player.jump_input_actuation and Player.has_jump:
 		return STATES.JUMP
 	if Player.is_on_floor():
 		return STATES.IDLE

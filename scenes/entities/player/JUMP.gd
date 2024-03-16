@@ -18,6 +18,7 @@ func enter_state():
 		wall_jump_lock = true
 	if Player.is_on_floor():
 		Player.has_dash = true
+		Player.has_jump = true
 	# Jump
 	Player.velocity.y = Player.max_jump_velocity
 
@@ -33,7 +34,7 @@ func update(delta):
 		return STATES.DASH
 	if Player.is_on_floor():
 		return STATES.MOVE
-	# if didnt walljump and didnt slide jump
+	# if not walljumping or slide jumping
 	if !wall_jump_lock and Player.prev_state != $"../SLIDE":
 		player_movement()
 	jump_movement()

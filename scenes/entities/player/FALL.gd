@@ -1,7 +1,7 @@
 extends "state.gd"
 
 
-@onready var CoyoteTimer = $CoyoteTimer
+@onready var CoyoteTimer = $"../../Timers/CoyoteTimer"
 @export var coyote_duration = 0.2
 
 func enter_state():
@@ -9,7 +9,7 @@ func enter_state():
 		Player.has_jump = true
 		CoyoteTimer.start(coyote_duration)
 	else:
-		Player.has_jump = false
+		pass
 
 
 func update(delta):
@@ -30,7 +30,6 @@ func update(delta):
 		return STATES.DASH
 	if Player.get_next_to_wall() != null:
 		return STATES.WALLSLIDE
-	
 	return null
 
 
