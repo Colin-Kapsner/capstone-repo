@@ -13,7 +13,7 @@ func enter_state():
 
 
 func update(delta):
-	Player.SPEED = 160
+	Player.SPEED = 200
 	Player.gravity(delta)
 	if Player.jump_input_actuation and Player.has_jump:
 		Player.has_jump = false

@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-
+@export var ghost_node : PackedScene
 
 # player input
 var movement_input = Vector2.ZERO
@@ -10,7 +10,7 @@ var slide_input = false
 var dash_input = false
 
 # Misc
-var SPEED = 245.0
+var SPEED = 210.0
 var gravity_var = 0
 var tile_size = 8
 var MAX_JUMP_HEIGHT = tile_size * 6
@@ -18,7 +18,7 @@ var MIN_JUMP_HEIGHT = tile_size * 2
 var jump_duration = 0.3
 var max_jump_velocity
 var min_jump_velocity
-var acceleration = 75
+var acceleration = 65
 var friction = 33
 var last_direction = Vector2.RIGHT
 var last_wall_on = Vector2.ZERO
@@ -43,7 +43,7 @@ var counter = 1
 @onready var Raycasts = $Raycasts
 @onready var player_time = $"../Timer Stuff/PlayerTime".get_wait_time()
 	# ghost
-@export var ghost_node : PackedScene
+@onready var particles = $GPUParticles2D
 @onready var ghost_timer = $GhostTimer
 
 # Always happening
@@ -64,9 +64,10 @@ func _ready():
 func _physics_process(delta):
 	cam_physics()
 	player_input()
+	particle_logic()
 	change_state(current_state.update(delta))
-	# temporary debug
-	$"current state".text = str(current_state.get_name())
+	# temporary debug (make label in player.tscn called "current state"
+	#$"current state".text = str(current_state.get_name())
 	move_and_slide()
 
 # Setting some values (probably not necessary)
@@ -78,7 +79,7 @@ func set_velocity_values():
 
 # Gravity...
 func gravity(delta):
-	if not is_on_floor():
+	if !is_on_floor():
 		velocity.y += gravity_var * delta
 
 # Entering, Updating, and Exiting states
@@ -93,12 +94,20 @@ func change_state(input_state):
 # Recording all player input
 func player_input():
 	movement_input = Vector2.ZERO
+
+
+	# Menu (Esc)
 	if Input.is_action_just_pressed("Menu"):
 		get_tree().change_scene_to_file("res://main.tscn")
 		DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
+
+
+	# Restart (R)
 	if Input.is_action_just_pressed("Restart"):
 		position.x = 0
 		position.y = 0
+
+	# Movement (WASD)
 	if Input.is_action_pressed("MoveRight"):
 		movement_input.x += 1
 	if Input.is_action_pressed("MoveLeft"):
@@ -108,7 +117,7 @@ func player_input():
 	if Input.is_action_pressed("MoveDown"):
 		movement_input.y += 1
 
-	# jump
+	# jump (Spacebar)
 	if Input.is_action_pressed("Jump"):
 		jump_input = true
 	else: 
@@ -118,13 +127,13 @@ func player_input():
 	else:
 		jump_input_actuation = false
 
-	# climb
+	# Slide (S)
 	if Input.is_action_pressed("Slide"):
 		slide_input = true
 	else: 
 		slide_input = false
 
-	# dash
+	# Dash (P)
 	if Input.is_action_just_pressed("Dash"):
 		dash_input = true
 	else: 
@@ -148,7 +157,7 @@ func cam_physics():
 	elif velocity.x <= -450:
 		$Camera2D.offset.x = move_toward($Camera2D.offset.x, -300, 3)
 	else:
-		$Camera2D.offset.x = move_toward($Camera2D.offset.x, 125, 3)
+		$Camera2D.offset.x = move_toward($Camera2D.offset.x, 125, 1.5)
 
 # This is all timer stuff
 func _on_start_timer_body_entered(body):
@@ -163,11 +172,14 @@ func timer_logic(delta: float):
 	else:
 		pass
 
+# Dash particle logic
+func particle_logic():
+	if is_on_floor():
+		particles.position.y = 10
+	else:
+		particles.position.y = 0
 
-func add_ghost():
-	var ghost = ghost_node.instantiate()
-	ghost.set_property(position, $PlayerImg.scale)
-	get_tree().current_scene.add_child(ghost)
-
-func _on_ghost_timer_timeout():
-	add_ghost()
+# Reset logic
+func _on_reset_body_entered(body):
+	has_jump = true
+	has_dash = true

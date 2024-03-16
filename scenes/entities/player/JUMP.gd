@@ -25,6 +25,9 @@ func enter_state():
 
 func update(delta):
 	Player.gravity(delta)
+	if Player.get_next_to_wall() != null:
+		Player.has_jump = true
+	
 	if Player.jump_input_actuation and Player.has_jump:
 		Player.has_jump = false
 		return STATES.JUMP

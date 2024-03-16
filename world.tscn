@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://kguu0sowdcf"]
+[gd_scene load_steps=6 format=3 uid="uid://kguu0sowdcf"]
 
 [ext_resource type="PackedScene" uid="uid://c056lhwdui221" path="res://scenes/entities/maps/worldmap.tscn" id="2_d6bib"]
-[ext_resource type="PackedScene" uid="uid://b12yauf5kylrh" path="res://start_timer.tscn" id="3_kilc4"]
+[ext_resource type="PackedScene" uid="uid://b12yauf5kylrh" path="res://scenes/entities/Misc/start_timer.tscn" id="3_kilc4"]
 [ext_resource type="PackedScene" uid="uid://dtskr7q6mavlh" path="res://scenes/entities/player/player.tscn" id="3_ykecn"]
-[ext_resource type="PackedScene" uid="uid://dmth78d0hh1qb" path="res://end_timer.tscn" id="4_j4o0j"]
+[ext_resource type="PackedScene" uid="uid://dmth78d0hh1qb" path="res://scenes/entities/Misc/end_timer.tscn" id="4_j4o0j"]
+[ext_resource type="PackedScene" uid="uid://b2v5dg284nv6s" path="res://scenes/entities/Misc/Reset.tscn" id="5_jw41k"]
 
 [node name="World" type="Node2D"]
 
@@ -38,12 +39,26 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Time" type="Label" parent="HUD/Control"]
 layout_mode = 0
-offset_left = 1753.0
-offset_top = 54.0
-offset_right = 1793.0
-offset_bottom = 77.0
-scale = Vector2(1.81, 1.81)
+offset_left = 1716.0
+offset_top = 61.0
+offset_right = 1756.0
+offset_bottom = 84.0
+scale = Vector2(2.245, 2.245)
 text = "TIME"
+
+[node name="Resets" type="Node" parent="."]
+
+[node name="Reset" parent="Resets" instance=ExtResource("5_jw41k")]
+position = Vector2(-279, -115)
+
+[node name="Reset2" parent="Resets" instance=ExtResource("5_jw41k")]
+position = Vector2(-140, -57)
+
+[node name="Reset3" parent="Resets" instance=ExtResource("5_jw41k")]
+position = Vector2(3263, -31)
 
 [connection signal="body_entered" from="Timer Stuff/EndTimer" to="Player" method="_on_end_timer_body_entered"]
 [connection signal="body_entered" from="Timer Stuff/StartTimer" to="Player" method="_on_start_timer_body_entered"]
+[connection signal="body_entered" from="Resets/Reset" to="Player" method="_on_reset_body_entered"]
+[connection signal="body_entered" from="Resets/Reset2" to="Player" method="_on_reset_body_entered"]
+[connection signal="body_entered" from="Resets/Reset3" to="Player" method="_on_reset_body_entered"]
