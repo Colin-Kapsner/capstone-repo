@@ -24,7 +24,7 @@ func player_movement():
 	if Player.movement_input.x < 0:
 		Player.velocity.x = move_toward(Player.velocity.x, -Player.SPEED, Player.acceleration)
 	# Slowing down
-	if Player.movement_input.x == 0 and Player.velocity.x != 0 and Player.is_on_floor():
-			Player.velocity.x = move_toward(Player.velocity.x, 0, Player.friction)
+	if Player.movement_input.x == 0 and Player.velocity.x != 0:
+		Player.velocity.x = move_toward(Player.velocity.x, 0, Player.friction)
 
 

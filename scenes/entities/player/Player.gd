@@ -72,7 +72,7 @@ func _physics_process(delta):
 
 # Setting some values (probably not necessary)
 func set_velocity_values():
-	gravity_var = 2 * MAX_JUMP_HEIGHT / pow(jump_duration,2)
+	gravity_var = 2.6 * MAX_JUMP_HEIGHT / pow(jump_duration,2)
 	max_jump_velocity = -sqrt(2 * gravity_var * MAX_JUMP_HEIGHT)
 	min_jump_velocity = -sqrt(2 * gravity_var * MIN_JUMP_HEIGHT)
 	# spring_velocity = -sqrt(2 * gravity_var * SPRING_JUMP_HEIGHT)
