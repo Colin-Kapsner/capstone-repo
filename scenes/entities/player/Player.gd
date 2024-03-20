@@ -41,10 +41,8 @@ var counter = 1
 # other
 @onready var STATES = $STATES
 @onready var Raycasts = $Raycasts
-@onready var player_time = $"../Timer Stuff/PlayerTime".get_wait_time()
 	# ghost
 @onready var particles = $GPUParticles2D
-@onready var ghost_timer = $GhostTimer
 
 # Always happening
 func _process(delta: float) -> void:

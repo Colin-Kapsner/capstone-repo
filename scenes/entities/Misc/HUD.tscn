@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://targd5dxboe4"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Time" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 1679.0
+offset_top = 26.0
+offset_right = 1719.0
+offset_bottom = 49.0
+scale = Vector2(2.245, 2.245)
+text = "TIME"
+metadata/_edit_use_anchors_ = true
