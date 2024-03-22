@@ -1,11 +1,7 @@
 res://world.tscn
-res://scenes/entities/player/state.gd
 res://main.tscn
 res://scenes/entities/player/player.tscn
 res://scenes/entities/Misc/Reset.tscn
 res://scenes/entities/Misc/start_timer.tscn
 res://scenes/entities/Misc/HUD.tscn
-res://scenes/entities/player/JUMP.gd
-res://Main.gd
 res://scenes/entities/player/Player.gd
-res://scenes/entities/player/SLIDE.gd

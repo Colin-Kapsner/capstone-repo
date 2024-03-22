@@ -1,12 +1,12 @@
-Node
 Label
+Control
+CanvasLayer
+Node
 TextEdit
 ColorRect
 GPUParticles2D
 Timer
 Sprite2D
-Control
-CanvasLayer
 CanvasGroup
 ProgressBar
 CollisionShape2D

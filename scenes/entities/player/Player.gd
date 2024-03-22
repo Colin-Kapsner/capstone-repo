@@ -65,7 +65,7 @@ func _physics_process(delta):
 	player_input()
 	particle_logic()
 	change_state(current_state.update(delta))
-	# temporary debug (make label in player.tscn called "current state"
+	# temporary debug (make label in player.tscn called "current state")
 	#$"current state".text = str(current_state.get_name())
 	move_and_slide()
 
@@ -171,7 +171,8 @@ func _on_end_timer_body_entered(body):
 func timer_logic(delta: float):
 	if counting:
 		time_elapsed += delta
-		$"../HUD/Control/Time".text = str(time_elapsed).pad_decimals(3)
+		# Concatenating for glitch
+		$"../HUD/Control/Time".text = " " + str(time_elapsed).pad_decimals(3)
 	else:
 		pass
 
