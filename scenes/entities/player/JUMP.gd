@@ -11,15 +11,16 @@ func enter_state():
 	# If on wall and in air
 	if Player.get_next_to_wall() != null and !Player.is_on_floor():
 		if Player.last_wall_on == Vector2.RIGHT:
-			Player.velocity.x = -Player.JUMP_VELOCITY * 1.5
+			Player.velocity.x = -Player.JUMP_VELOCITY
 		else:
-			Player.velocity.x = Player.JUMP_VELOCITY * 1.5
+			Player.velocity.x = Player.JUMP_VELOCITY
 		wall_jump_lock = true
-	if Player.is_on_floor():
+	if Player.is_on_floor() or !Player.coyote_timer.is_stopped():
 		Player.has_dash = true
 		Player.has_jump = true
 	# Jump
 	Player.velocity.y = Player.max_jump_velocity
+	
 
 
 func update(delta):
@@ -43,7 +44,7 @@ func update(delta):
 
 func jump_movement():
 	if wall_jump_lock:
-		Player.velocity.x = -Player.last_wall_on.x * (Player.SPEED - 50)
+		Player.velocity.x = -Player.last_wall_on.x * (Player.SPEED + 50)
 	if Player.jump_input == false:
 		if Player.velocity.y < Player.min_jump_velocity:
 			Player.velocity.y /= 2

@@ -28,6 +28,7 @@ var wall_jump_velocity = -400.0
 # mechanics
 var has_dash = true
 var has_jump = true
+var was_on_floor = is_on_floor()
 
 # state stuff
 var current_state = null
@@ -41,7 +42,7 @@ var counter = 1
 # other
 @onready var STATES = $STATES
 @onready var Raycasts = $Raycasts
-	# ghost
+@onready var coyote_timer = $Timers/CoyoteTimer
 @onready var particles = $GPUParticles2D
 
 # Always happening
@@ -70,7 +71,7 @@ func _physics_process(delta):
 
 # Setting some values (probably not necessary)
 func set_velocity_values():
-	gravity_var = 2.6 * MAX_JUMP_HEIGHT / pow(jump_duration,2)
+	gravity_var = 3 * MAX_JUMP_HEIGHT / pow(jump_duration,2)
 	max_jump_velocity = -sqrt(2 * gravity_var * MAX_JUMP_HEIGHT)
 	min_jump_velocity = -sqrt(2 * gravity_var * MIN_JUMP_HEIGHT)
 	# spring_velocity = -sqrt(2 * gravity_var * SPRING_JUMP_HEIGHT)
@@ -93,6 +94,8 @@ func change_state(input_state):
 func player_input():
 	movement_input = Vector2.ZERO
 
+	if was_on_floor && !is_on_floor():
+		coyote_timer.start()
 
 	# Menu (Esc)
 	if Input.is_action_just_pressed("Menu"):
@@ -104,6 +107,8 @@ func player_input():
 	if Input.is_action_just_pressed("Restart"):
 		position.x = 0
 		position.y = 0
+		time_elapsed = 0.0
+		counting = false
 
 	# Movement (WASD)
 	if Input.is_action_pressed("MoveRight"):
@@ -179,5 +184,5 @@ func particle_logic():
 
 # Reset logic
 func _on_reset_body_entered(body):
-	has_jump = true
 	has_dash = true
+	has_jump = true

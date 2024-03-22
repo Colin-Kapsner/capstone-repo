@@ -38,4 +38,3 @@ func exit_state():
 
 func _on_timer_timeout():
 	dashing = false
-	pass # Replace with function body.

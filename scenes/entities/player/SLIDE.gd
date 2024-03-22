@@ -35,6 +35,7 @@ func update(delta):
 	if Player.velocity.x == 0:
 		return STATES.IDLE
 	if !sliding:
+		Player.has_dash = true
 		return STATES.FALL
 	return null
 
