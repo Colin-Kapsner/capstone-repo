@@ -44,7 +44,7 @@ var counter = 1
 @onready var Raycasts = $Raycasts
 @onready var coyote_timer = $Timers/CoyoteTimer
 @onready var particles = $GPUParticles2D
-
+@onready var animations = $AnimationPlayer
 # Always happening
 func _process(delta: float) -> void:
 	timer_logic(delta)
@@ -187,3 +187,11 @@ func particle_logic():
 func _on_reset_body_entered(body):
 	has_dash = true
 	has_jump = true
+
+
+
+
+
+
+
+

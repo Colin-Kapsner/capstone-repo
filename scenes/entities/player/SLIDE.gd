@@ -9,6 +9,7 @@ var sliding = false
 
 func enter_state():
 	sliding = true
+	Player.animations.play("slide_animation")
 	Player.has_jump = true
 	if Player.movement_input != Vector2.ZERO:
 		slide_direction = Player.movement_input
@@ -39,13 +40,14 @@ func update(delta):
 		return STATES.FALL
 	return null
 
-
-func exit_state():
-	sliding = false
-	Player.particles.emitting = false
-
 func slide_movement():
 	if Player.velocity.x > Player.SPEED/2:
 		Player.velocity.x = move_toward(Player.velocity.x, Player.SPEED/2, slide_friction)
 	if Player.velocity.x < -Player.SPEED/2:
 		Player.velocity.x = move_toward(Player.velocity.x, -Player.SPEED/2, slide_friction)
+
+func exit_state():
+	sliding = false
+	Player.particles.emitting = false
+	Player.animations.stop()
+

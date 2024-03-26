@@ -5,3 +5,4 @@ res://scenes/entities/Misc/Reset.tscn
 res://scenes/entities/Misc/start_timer.tscn
 res://scenes/entities/Misc/HUD.tscn
 res://scenes/entities/player/Player.gd
+res://scenes/entities/player/SLIDE.gd

@@ -1,3 +1,5 @@
+AnimationPlayer
+Sprite2D
 Label
 Control
 CanvasLayer
@@ -6,9 +8,7 @@ TextEdit
 ColorRect
 GPUParticles2D
 Timer
-Sprite2D
 CanvasGroup
 ProgressBar
 CollisionShape2D
 Panel
-Area2D
