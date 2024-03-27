@@ -1,0 +1,260 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8myymj275foo"]
+
+[sub_resource type="FontFile" id="FontFile_6poc7"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/17/0/ascent = 0.0
+cache/0/17/0/descent = 0.0
+cache/0/17/0/underline_position = 0.0
+cache/0/17/0/underline_thickness = 0.0
+cache/0/17/0/scale = 1.0
+cache/0/17/0/glyphs/0/advance = Vector2(0, 0)
+cache/0/17/0/glyphs/0/offset = Vector2(0, 0)
+cache/0/17/0/glyphs/0/size = Vector2(0, 0)
+cache/0/17/0/glyphs/0/uv_rect = Rect2(0, 0, 0, 0)
+cache/0/17/0/glyphs/0/texture_idx = -1
+cache/0/17/0/kerning_overrides/17/0 = Vector2(0, 0)
+cache/0/17/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/17/0/kerning_overrides/15/0 = Vector2(0, 0)
+cache/0/17/0/kerning_overrides/14/0 = Vector2(0, 0)
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/17/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/15/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/14/0 = Vector2(0, 0)
+cache/0/15/0/ascent = 0.0
+cache/0/15/0/descent = 0.0
+cache/0/15/0/underline_position = 0.0
+cache/0/15/0/underline_thickness = 0.0
+cache/0/15/0/scale = 1.0
+cache/0/15/0/kerning_overrides/17/0 = Vector2(0, 0)
+cache/0/15/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/15/0/kerning_overrides/15/0 = Vector2(0, 0)
+cache/0/15/0/kerning_overrides/14/0 = Vector2(0, 0)
+cache/0/14/0/ascent = 0.0
+cache/0/14/0/descent = 0.0
+cache/0/14/0/underline_position = 0.0
+cache/0/14/0/underline_thickness = 0.0
+cache/0/14/0/scale = 1.0
+cache/0/14/0/kerning_overrides/17/0 = Vector2(0, 0)
+cache/0/14/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/14/0/kerning_overrides/15/0 = Vector2(0, 0)
+cache/0/14/0/kerning_overrides/14/0 = Vector2(0, 0)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 320.0
+offset_bottom = 368.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(0.952941, 0.952941, 0.952941, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="Keybinds" type="Label" parent="ColorRect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 120.0
+offset_top = 8.0
+offset_right = 200.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontFile_6poc7")
+theme_override_font_sizes/font_size = 17
+text = "Keybinds:"
+horizontal_alignment = 1
+
+[node name="Menu" type="Label" parent="ColorRect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 64.0
+offset_top = 296.0
+offset_right = 128.0
+offset_bottom = 320.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontFile_6poc7")
+theme_override_font_sizes/font_size = 17
+text = "Menu:"
+
+[node name="Restart" type="Label" parent="ColorRect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 64.0
+offset_top = 256.0
+offset_right = 128.0
+offset_bottom = 280.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontFile_6poc7")
+theme_override_font_sizes/font_size = 17
+text = "Restart:"
+
+[node name="Move Left" type="Label" parent="ColorRect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 64.0
+offset_top = 56.0
+offset_right = 144.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontFile_6poc7")
+theme_override_font_sizes/font_size = 17
+text = "Move Left:"
+
+[node name="Move Right" type="Label" parent="ColorRect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 64.0
+offset_top = 96.0
+offset_right = 155.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontFile_6poc7")
+theme_override_font_sizes/font_size = 17
+text = "Move Right:"
+
+[node name="Slide" type="Label" parent="ColorRect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 64.0
+offset_top = 136.0
+offset_right = 144.0
+offset_bottom = 160.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontFile_6poc7")
+theme_override_font_sizes/font_size = 17
+text = "Slide:"
+
+[node name="Jump" type="Label" parent="ColorRect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 64.0
+offset_top = 216.0
+offset_right = 144.0
+offset_bottom = 240.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontFile_6poc7")
+theme_override_font_sizes/font_size = 17
+text = "Jump:"
+
+[node name="Dash" type="Label" parent="ColorRect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 64.0
+offset_top = 176.0
+offset_right = 144.0
+offset_bottom = 200.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontFile_6poc7")
+theme_override_font_sizes/font_size = 17
+text = "Dash:"
+
+[node name="A" type="Label" parent="ColorRect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 200.0
+offset_top = 56.0
+offset_right = 280.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontFile_6poc7")
+theme_override_font_sizes/font_size = 17
+text = "A"
+
+[node name="D" type="Label" parent="ColorRect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 200.0
+offset_top = 96.0
+offset_right = 280.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontFile_6poc7")
+theme_override_font_sizes/font_size = 17
+text = "D"
+
+[node name="S" type="Label" parent="ColorRect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 200.0
+offset_top = 136.0
+offset_right = 280.0
+offset_bottom = 160.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontFile_6poc7")
+theme_override_font_sizes/font_size = 17
+text = "S"
+
+[node name="P" type="Label" parent="ColorRect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 200.0
+offset_top = 176.0
+offset_right = 280.0
+offset_bottom = 200.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontFile_6poc7")
+theme_override_font_sizes/font_size = 17
+text = "P"
+
+[node name="Space" type="Label" parent="ColorRect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 200.0
+offset_top = 216.0
+offset_right = 280.0
+offset_bottom = 240.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontFile_6poc7")
+theme_override_font_sizes/font_size = 17
+text = "Space"
+
+[node name="ESC" type="Label" parent="ColorRect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 200.0
+offset_top = 296.0
+offset_right = 280.0
+offset_bottom = 320.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontFile_6poc7")
+theme_override_font_sizes/font_size = 17
+text = "ESC
+"
+
+[node name="R" type="Label" parent="ColorRect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 200.0
+offset_top = 256.0
+offset_right = 280.0
+offset_bottom = 280.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontFile_6poc7")
+theme_override_font_sizes/font_size = 17
+text = "R
+"
+
+[node name="Hint" type="Label" parent="ColorRect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 56.0
+offset_top = 336.0
+offset_right = 264.0
+offset_bottom = 360.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontFile_6poc7")
+theme_override_font_sizes/font_size = 14
+text = "(Hint: Dash -> Slide -> Jump)"
+horizontal_alignment = 1

@@ -1,24 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqw5iim7r3cji"]
+[gd_scene load_steps=3 format=3 uid="uid://bqw5iim7r3cji"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_2prlx"]
+[ext_resource type="PackedScene" uid="uid://c8myymj275foo" path="res://scenes/entities/Misc/Keybinds.tscn" id="2_kpc2h"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_2prlx")
 
 [node name="Play" type="Button" parent="."]
 offset_left = 752.0
-offset_top = 414.0
+offset_top = 607.0
 offset_right = 1168.0
-offset_bottom = 478.0
+offset_bottom = 671.0
 text = "Play
 "
 
 [node name="Quit" type="Button" parent="."]
 offset_left = 752.0
-offset_top = 494.0
+offset_top = 692.0
 offset_right = 1168.0
-offset_bottom = 558.0
+offset_bottom = 756.0
 text = "Quit"
+
+[node name="Control" parent="." instance=ExtResource("2_kpc2h")]
+offset_left = 796.0
+offset_top = 201.0
+offset_right = 1116.0
+offset_bottom = 569.0
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

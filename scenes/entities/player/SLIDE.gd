@@ -48,6 +48,7 @@ func slide_movement():
 
 func exit_state():
 	sliding = false
+	Player.has_dash = true
 	Player.particles.emitting = false
 	Player.animations.stop()
 
