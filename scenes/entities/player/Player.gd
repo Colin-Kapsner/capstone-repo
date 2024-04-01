@@ -10,7 +10,7 @@ var slide_input = false
 var dash_input = false
 
 # Misc
-var SPEED = 210.0
+var SPEED = 300.0
 var gravity_var = 0
 var tile_size = 8
 var MAX_JUMP_HEIGHT = tile_size * 6
@@ -107,6 +107,7 @@ func player_input():
 	if Input.is_action_just_pressed("Restart"):
 		position.x = 0
 		position.y = 0
+		velocity = Vector2.ZERO
 		time_elapsed = 0.0
 		counting = false
 
@@ -156,7 +157,7 @@ func get_next_to_wall():
 # Camera functionality
 func cam_physics():
 	if velocity.x >= 450:
-		$Camera2D.offset.x = move_toward($Camera2D.offset.x, 400, 3.5)
+		$Camera2D.offset.x = move_toward($Camera2D.offset.x, 450, 4)
 	elif velocity.x <= -450:
 		$Camera2D.offset.x = move_toward($Camera2D.offset.x, -300, 3)
 	else:

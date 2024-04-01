@@ -1,11 +1,12 @@
-Sprite2D
-ShapeCast2D
-ColorRect
+Container
+Control
 Node
 Label
+ShapeCast2D
+Sprite2D
+ColorRect
 RichTextLabel
 Tree
-Control
 ParallaxLayer
 ParallaxBackground
 AnimationPlayer

@@ -4,15 +4,15 @@
 bg_color = Color(0.996078, 0.996078, 0.996078, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jqlpe"]
-size = Vector2(6, 72)
+size = Vector2(6, 96)
 
 [node name="Area2D" type="Area2D"]
 
 [node name="Panel" type="Panel" parent="."]
 offset_left = -3.0
-offset_top = -36.0
+offset_top = -48.0
 offset_right = 3.0
-offset_bottom = 36.0
+offset_bottom = 48.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_p2gml")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

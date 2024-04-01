@@ -62,7 +62,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_i4w4v"]
 resource_name = "slide_animation"
-length = 0.9
+length = 15.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -71,10 +71,10 @@ tracks/0/path = NodePath("PlayerImg:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.102043, 0.19285, 0.898361),
-"transitions": PackedFloat32Array(-2, -2, -2),
+"times": PackedFloat32Array(0.102043, 0.19285, 0.898361, 15),
+"transitions": PackedFloat32Array(-2, -2, -2, -2),
 "update": 0,
-"values": [Vector2(-0.08, -0.026), Vector2(-0.08, -0.026), Vector2(-0.0598981, -0.0604686)]
+"values": [Vector2(-0.08, -0.026), Vector2(-0.08, -0.026), Vector2(-0.0598981, -0.0604686), Vector2(-0.0598981, -0.0604686)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -83,10 +83,10 @@ tracks/1/path = NodePath("PlayerImg:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.102043, 0.19285, 0.898361),
-"transitions": PackedFloat32Array(-2, -2, -2),
+"times": PackedFloat32Array(0.102043, 0.19285, 0.898361, 15),
+"transitions": PackedFloat32Array(-2, -2, -2, -2),
 "update": 0,
-"values": [Vector2(0, 7.005), Vector2(0, 6.367), Vector2(0, 0.423)]
+"values": [Vector2(0, 7.005), Vector2(0, 6.367), Vector2(0, 0.423), Vector2(0, 0.423)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7a4cl"]
@@ -109,7 +109,7 @@ shape = SubResource("CircleShape2D_0ij0r")
 metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(125, 0)
+offset = Vector2(125, -125)
 zoom = Vector2(1.45, 1.45)
 limit_smoothed = true
 position_smoothing_enabled = true

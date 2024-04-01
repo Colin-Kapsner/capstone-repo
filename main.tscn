@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqw5iim7r3cji"]
+[gd_scene load_steps=6 format=3 uid="uid://bqw5iim7r3cji"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_2prlx"]
 [ext_resource type="PackedScene" uid="uid://c8myymj275foo" path="res://scenes/entities/Misc/Keybinds.tscn" id="2_kpc2h"]
+[ext_resource type="PackedScene" uid="uid://b12yauf5kylrh" path="res://scenes/entities/Misc/start_timer.tscn" id="3_duacy"]
+[ext_resource type="PackedScene" uid="uid://dmth78d0hh1qb" path="res://scenes/entities/Misc/end_timer.tscn" id="4_qhged"]
+[ext_resource type="PackedScene" uid="uid://b2v5dg284nv6s" path="res://scenes/entities/Misc/Reset.tscn" id="5_a648p"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_2prlx")
@@ -26,6 +29,43 @@ offset_left = 796.0
 offset_top = 201.0
 offset_right = 1116.0
 offset_bottom = 569.0
+
+[node name="StartTimer" parent="." instance=ExtResource("3_duacy")]
+position = Vector2(808, 856)
+
+[node name="EndTimer" parent="." instance=ExtResource("4_qhged")]
+position = Vector2(1016, 856)
+
+[node name="Reset" parent="." instance=ExtResource("5_a648p")]
+position = Vector2(1243, 838)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 664.0
+offset_top = 832.0
+offset_right = 775.0
+offset_bottom = 855.0
+theme_override_font_sizes/font_size = 0
+text = "Starts timer ->
+"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 880.0
+offset_top = 832.0
+offset_right = 982.0
+offset_bottom = 855.0
+theme_override_font_sizes/font_size = 0
+text = "Ends timer ->
+"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 1088.0
+offset_top = 824.0
+offset_right = 1183.0
+offset_bottom = 873.0
+theme_override_font_sizes/font_size = 0
+text = "Resets Jump 
+and Dash ->
+"
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
