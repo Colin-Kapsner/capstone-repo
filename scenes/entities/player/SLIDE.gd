@@ -2,8 +2,8 @@ extends "state.gd"
 
 var slide_direction = Vector2.ZERO
 var slide_friction = 5
-var slide_boost = 150
-var slide_jump_boost = 100
+var slide_boost = 174
+var slide_jump_boost = 70
 var sliding = false
 
 
