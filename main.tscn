@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqw5iim7r3cji"]
+[gd_scene load_steps=9 format=3 uid="uid://bqw5iim7r3cji"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_2prlx"]
 [ext_resource type="PackedScene" uid="uid://c8myymj275foo" path="res://scenes/entities/Misc/Keybinds.tscn" id="2_kpc2h"]
 [ext_resource type="PackedScene" uid="uid://b12yauf5kylrh" path="res://scenes/entities/Misc/start_timer.tscn" id="3_duacy"]
 [ext_resource type="PackedScene" uid="uid://dmth78d0hh1qb" path="res://scenes/entities/Misc/end_timer.tscn" id="4_qhged"]
 [ext_resource type="PackedScene" uid="uid://b2v5dg284nv6s" path="res://scenes/entities/Misc/Reset.tscn" id="5_a648p"]
+[ext_resource type="Texture2D" uid="uid://dghlkxqw02mt8" path="res://scenes/assets/Nebula Aqua-Pink.png" id="6_jxwhj"]
+[ext_resource type="Texture2D" uid="uid://dwlop8yon2jth" path="res://scenes/assets/Stars Small_1.png" id="7_325kg"]
+[ext_resource type="Texture2D" uid="uid://dx8xfryed3hcs" path="res://scenes/assets/Stars Small_2.png" id="8_bpfpr"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_2prlx")
@@ -25,47 +28,67 @@ offset_bottom = 756.0
 text = "Quit"
 
 [node name="Control" parent="." instance=ExtResource("2_kpc2h")]
-offset_left = 796.0
+offset_left = 657.455
 offset_top = 201.0
-offset_right = 1116.0
+offset_right = 977.455
 offset_bottom = 569.0
 
 [node name="StartTimer" parent="." instance=ExtResource("3_duacy")]
-position = Vector2(808, 856)
+position = Vector2(1154, 269)
 
 [node name="EndTimer" parent="." instance=ExtResource("4_qhged")]
-position = Vector2(1016, 856)
+position = Vector2(1153, 396)
 
 [node name="Reset" parent="." instance=ExtResource("5_a648p")]
-position = Vector2(1243, 838)
+position = Vector2(1153, 514)
 
 [node name="Label" type="Label" parent="."]
-offset_left = 664.0
-offset_top = 832.0
-offset_right = 775.0
-offset_bottom = 855.0
+offset_left = 1010.0
+offset_top = 245.0
+offset_right = 1121.0
+offset_bottom = 268.0
 theme_override_font_sizes/font_size = 0
 text = "Starts timer ->
 "
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 880.0
-offset_top = 832.0
-offset_right = 982.0
-offset_bottom = 855.0
+offset_left = 1010.0
+offset_top = 372.0
+offset_right = 1112.0
+offset_bottom = 395.0
 theme_override_font_sizes/font_size = 0
 text = "Ends timer ->
 "
 
 [node name="Label3" type="Label" parent="."]
-offset_left = 1088.0
-offset_top = 824.0
-offset_right = 1183.0
-offset_bottom = 873.0
+offset_left = 1010.0
+offset_top = 484.705
+offset_right = 1105.0
+offset_bottom = 533.705
 theme_override_font_sizes/font_size = 0
 text = "Resets Jump 
 and Dash ->
 "
+
+[node name="Node" type="Node" parent="."]
+
+[node name="NebulaAqua-pink" type="Sprite2D" parent="Node"]
+z_index = -4
+position = Vector2(988.4, 54.4)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("6_jxwhj")
+
+[node name="StarsSmall1" type="Sprite2D" parent="Node"]
+z_index = -3
+position = Vector2(988.4, 54.4)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("7_325kg")
+
+[node name="StarsSmall2" type="Sprite2D" parent="Node"]
+z_index = -2
+position = Vector2(988.4, 54.4)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("8_bpfpr")
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

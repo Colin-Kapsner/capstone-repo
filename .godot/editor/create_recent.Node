@@ -1,6 +1,6 @@
+Node
 Container
 Control
-Node
 Label
 ShapeCast2D
 Sprite2D
@@ -12,4 +12,3 @@ ParallaxBackground
 AnimationPlayer
 CanvasLayer
 TextEdit
-GPUParticles2D
