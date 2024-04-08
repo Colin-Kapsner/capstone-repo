@@ -1,3 +1,7 @@
+CanvasLayer
+RichTextLabel
+HTTPRequest
+Button
 Node
 Container
 Control
@@ -5,10 +9,7 @@ Label
 ShapeCast2D
 Sprite2D
 ColorRect
-RichTextLabel
 Tree
 ParallaxLayer
 ParallaxBackground
 AnimationPlayer
-CanvasLayer
-TextEdit
