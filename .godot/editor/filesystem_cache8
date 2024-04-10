@@ -1,8 +1,11 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1712553152
+::res://::1712742688
+End Screen.gd::GDScript::-1::1712554216::0::1::::<>Node<>::
+end_screen.tscn::PackedScene::1269372335646835869::1712554216::0::1::::<><>::res://End Screen.gd
 export_presets.cfg::TextFile::-1::1711957659::0::1::::<><>::
 global.gd::GDScript::-1::1711062989::0::1::::<>Node<>::
 icon.svg::CompressedTexture2D::7450420230084733824::1710454682::1710454703::1::::<><>::
+leaderboard.tscn::PackedScene::6517864980680726293::1712554122::0::1::::<><>::
 Main.gd::GDScript::-1::1711079980::0::1::::<>Node2D<>::
 main.tscn::PackedScene::3556694728827375922::1712441690::0::1::::<><>::res://Main.gd<>uid://c8myymj275foo::::res://scenes/entities/Misc/Keybinds.tscn<>uid://b12yauf5kylrh::::res://scenes/entities/Misc/start_timer.tscn<>uid://dmth78d0hh1qb::::res://scenes/entities/Misc/end_timer.tscn<>uid://b2v5dg284nv6s::::res://scenes/entities/Misc/Reset.tscn<>uid://dghlkxqw02mt8::::res://scenes/assets/Nebula Aqua-Pink.png<>uid://dwlop8yon2jth::::res://scenes/assets/Stars Small_1.png<>uid://dx8xfryed3hcs::::res://scenes/assets/Stars Small_2.png
 world.tscn::PackedScene::21044885299822309::1712441690::0::1::::<><>::uid://c056lhwdui221::::res://scenes/entities/maps/worldmap.tscn<>uid://b12yauf5kylrh::::res://scenes/entities/Misc/start_timer.tscn<>uid://dtskr7q6mavlh::::res://scenes/entities/player/player.tscn<>uid://dmth78d0hh1qb::::res://scenes/entities/Misc/end_timer.tscn<>uid://b2v5dg284nv6s::::res://scenes/entities/Misc/Reset.tscn<>uid://targd5dxboe4::::res://scenes/entities/Misc/HUD.tscn<>uid://dghlkxqw02mt8::::res://scenes/assets/Nebula Aqua-Pink.png<>uid://dwlop8yon2jth::::res://scenes/assets/Stars Small_1.png<>uid://dx8xfryed3hcs::::res://scenes/assets/Stars Small_2.png
