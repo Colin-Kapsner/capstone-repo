@@ -8,3 +8,9 @@ res://scenes/entities/Misc/start_timer.tscn
 res://scenes/entities/Misc/end_timer.tscn
 res://leaderboard.tscn
 res://end_screen.tscn
+res://scenes/entities/Misc/end_timer.gd
+res://scenes/entities/player/DASH.gd
+res://scenes/entities/player/Player.gd
+res://End Screen.gd
+res://Leaderboard.tscn
+res://leaderboard.gd

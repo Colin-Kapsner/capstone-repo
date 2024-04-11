@@ -9,7 +9,7 @@ var jump_input_actuation = false
 var slide_input = false
 var dash_input = false
 
-# Misc
+# variables
 var SPEED = 300.0
 var gravity_var = 0
 var tile_size = 8
@@ -45,6 +45,10 @@ var counter = 1
 @onready var coyote_timer = $Timers/CoyoteTimer
 @onready var particles = $GPUParticles2D
 @onready var animations = $AnimationPlayer
+var delay = 2.5
+@onready var Leaderboard_delay = $Timers/Leaderboard_delay
+
+
 # Always happening
 func _process(delta: float) -> void:
 	timer_logic(delta)
@@ -169,6 +173,10 @@ func _on_start_timer_body_entered(body):
 	counting = true
 func _on_end_timer_body_entered(body):
 	counting = false
+	if Leaderboard_delay.is_stopped():
+		Leaderboard_delay.start(delay)
+func _on_leaderboard_delay_timeout():
+	get_tree().change_scene_to_file("res://Leaderboard.tscn")
 func timer_logic(delta: float):
 	if counting:
 		time_elapsed += delta
@@ -176,6 +184,8 @@ func timer_logic(delta: float):
 		$"../HUD/Control/Time".text = " " + str(time_elapsed).pad_decimals(3)
 	else:
 		pass
+
+
 
 # Dash particle logic
 func particle_logic():
@@ -188,11 +198,5 @@ func particle_logic():
 func _on_reset_body_entered(body):
 	has_dash = true
 	has_jump = true
-
-
-
-
-
-
 
 

@@ -169,6 +169,8 @@ collision_mask = 3
 wait_time = 0.1
 one_shot = true
 
+[node name="Leaderboard_delay" type="Timer" parent="Timers"]
+
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 show_behind_parent = true
 emitting = false
@@ -179,3 +181,5 @@ process_material = SubResource("ParticleProcessMaterial_uyknj")
 libraries = {
 "": SubResource("AnimationLibrary_7a4cl")
 }
+
+[connection signal="timeout" from="Timers/Leaderboard_delay" to="." method="_on_leaderboard_delay_timeout"]

@@ -1,6 +1,7 @@
+Timer
+HTTPRequest
 CanvasLayer
 RichTextLabel
-HTTPRequest
 Button
 Node
 Container
@@ -11,5 +12,3 @@ Sprite2D
 ColorRect
 Tree
 ParallaxLayer
-ParallaxBackground
-AnimationPlayer
