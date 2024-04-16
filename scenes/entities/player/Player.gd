@@ -103,7 +103,7 @@ func player_input():
 
 	# Menu (Esc)
 	if Input.is_action_just_pressed("Menu"):
-		get_tree().change_scene_to_file("res://main.tscn")
+		get_tree().change_scene_to_file("res://menu.tscn")
 		DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
 
 

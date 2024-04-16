@@ -170,6 +170,8 @@ wait_time = 0.1
 one_shot = true
 
 [node name="Leaderboard_delay" type="Timer" parent="Timers"]
+process_callback = 0
+one_shot = true
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 show_behind_parent = true

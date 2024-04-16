@@ -10,6 +10,8 @@ var url = "https://meowfacts.herokuapp.com/"
 func _ready():
 	get_window().mode = Window.MODE_FULLSCREEN
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
+	
+	
 
 func _on_button_pressed():
 	http_request.request(url)
