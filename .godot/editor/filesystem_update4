@@ -1,14 +1,11 @@
 res://world.tscn
-res://scenes/entities/player/Player.gd
 res://menu.tscn
 res://scenes/entities/player/player.tscn
 res://scenes/entities/Misc/Reset.tscn
 res://scenes/entities/Misc/HUD.tscn
 res://scenes/entities/Misc/Keybinds.tscn
-res://leaderboard.tscn
+res://scenes/leaderboard.tscn
 res://scenes/entities/Misc/start_timer.tscn
 res://scenes/entities/Misc/end_timer.tscn
-res://scenes/leaderboard.gd
-res://resources/user_preferences.gd
 res://signup.tscn
-res://scenes/leaderboard.tscn
+res://scenes/leaderboard.gd

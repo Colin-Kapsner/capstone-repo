@@ -4,7 +4,7 @@ extends Node
 @onready var rich_text_label = $CanvasLayer/RichTextLabel
 
 
-var url = "https://meowfacts.herokuapp.com/"
+var url = "https://Leaderboard-API.test/api/alltoptimes"
 
 
 func _ready():
@@ -19,7 +19,7 @@ func _on_button_pressed():
 
 func _on_http_request_request_completed(result, response_code, headers, body):
 	var data = JSON.parse_string(body.get_string_from_utf8())
-	$CanvasLayer/RichTextLabel.text = data.data[0]
+	print(data)
 
 
 func _on_play_again_pressed():
