@@ -1,12 +1,13 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1713306241
+::res://::1713309176
 export_presets.cfg::TextFile::-1::1711957659::0::1::::<><>::
-global.gd::GDScript::-1::1713215705::0::1::::<>Node<>::
 icon.svg::CompressedTexture2D::7450420230084733824::1710454682::1710454703::1::::<><>::
-leaderboard.tscn::PackedScene::1269372335646835869::1713306241::0::1::::<><>::res://scenes/leaderboard.gd<>uid://dghlkxqw02mt8::::res://scenes/assets/Nebula Aqua-Pink.png<>uid://dwlop8yon2jth::::res://scenes/assets/Stars Small_1.png<>uid://dx8xfryed3hcs::::res://scenes/assets/Stars Small_2.png
-Main.gd::GDScript::-1::1711079980::0::1::::<>Node2D<>::
-menu.tscn::PackedScene::3556694728827375922::1713306322::0::1::::<><>::res://Main.gd<>uid://c8myymj275foo::::res://scenes/entities/Misc/Keybinds.tscn<>uid://b12yauf5kylrh::::res://scenes/entities/Misc/start_timer.tscn<>uid://yqnyuqjvqgxf::::res://scenes/entities/Misc/end_timer.tscn<>uid://b2v5dg284nv6s::::res://scenes/entities/Misc/Reset.tscn<>uid://dghlkxqw02mt8::::res://scenes/assets/Nebula Aqua-Pink.png<>uid://dwlop8yon2jth::::res://scenes/assets/Stars Small_1.png<>uid://dx8xfryed3hcs::::res://scenes/assets/Stars Small_2.png
-world.tscn::PackedScene::21044885299822309::1713306241::0::1::::<><>::uid://c056lhwdui221::::res://scenes/entities/maps/worldmap.tscn<>uid://b12yauf5kylrh::::res://scenes/entities/Misc/start_timer.tscn<>uid://dtskr7q6mavlh::::res://scenes/entities/player/player.tscn<>uid://yqnyuqjvqgxf::::res://scenes/entities/Misc/end_timer.tscn<>uid://b2v5dg284nv6s::::res://scenes/entities/Misc/Reset.tscn<>uid://targd5dxboe4::::res://scenes/entities/Misc/HUD.tscn<>uid://dghlkxqw02mt8::::res://scenes/assets/Nebula Aqua-Pink.png<>uid://dwlop8yon2jth::::res://scenes/assets/Stars Small_1.png<>uid://dx8xfryed3hcs::::res://scenes/assets/Stars Small_2.png
+leaderboard.tscn::PackedScene::1269372335646835869::1713309176::0::1::::<><>::res://scenes/leaderboard.gd<>uid://dghlkxqw02mt8::::res://scenes/assets/Nebula Aqua-Pink.png<>uid://dwlop8yon2jth::::res://scenes/assets/Stars Small_1.png<>uid://dx8xfryed3hcs::::res://scenes/assets/Stars Small_2.png
+menu.gd::GDScript::-1::1711079980::0::1::::<>Node2D<>::
+menu.tscn::PackedScene::3556694728827375922::1713309176::0::1::::<><>::res://menu.gd<>uid://c8myymj275foo::::res://scenes/entities/Misc/Keybinds.tscn<>uid://b12yauf5kylrh::::res://scenes/entities/Misc/start_timer.tscn<>uid://yqnyuqjvqgxf::::res://scenes/entities/Misc/end_timer.tscn<>uid://b2v5dg284nv6s::::res://scenes/entities/Misc/Reset.tscn<>uid://dghlkxqw02mt8::::res://scenes/assets/Nebula Aqua-Pink.png<>uid://dwlop8yon2jth::::res://scenes/assets/Stars Small_1.png<>uid://dx8xfryed3hcs::::res://scenes/assets/Stars Small_2.png
+signup.gd::GDScript::-1::1713309241::0::1::::<>Node2D<>::
+signup.tscn::PackedScene::2079352774744370943::1713309176::0::1::::<><>::uid://dghlkxqw02mt8::::res://scenes/assets/Nebula Aqua-Pink.png<>uid://dwlop8yon2jth::::res://scenes/assets/Stars Small_1.png<>uid://dx8xfryed3hcs::::res://scenes/assets/Stars Small_2.png
+world.tscn::PackedScene::21044885299822309::1713309176::0::1::::<><>::uid://c056lhwdui221::::res://scenes/entities/maps/worldmap.tscn<>uid://b12yauf5kylrh::::res://scenes/entities/Misc/start_timer.tscn<>uid://dtskr7q6mavlh::::res://scenes/entities/player/player.tscn<>uid://yqnyuqjvqgxf::::res://scenes/entities/Misc/end_timer.tscn<>uid://b2v5dg284nv6s::::res://scenes/entities/Misc/Reset.tscn<>uid://targd5dxboe4::::res://scenes/entities/Misc/HUD.tscn<>uid://dghlkxqw02mt8::::res://scenes/assets/Nebula Aqua-Pink.png<>uid://dwlop8yon2jth::::res://scenes/assets/Stars Small_1.png<>uid://dx8xfryed3hcs::::res://scenes/assets/Stars Small_2.png
 ::res://addons/::1707782025
 ::res://addons/silent_wolf/::1707781891
 plugin.cfg::TextFile::-1::1707781891::0::1::::<><>::
@@ -65,10 +66,10 @@ SWLocalFileStorage.gd::GDScript::-1::1707781891::0::1::::<>Node<>::
 SWLogger.gd::GDScript::-1::1707781891::0::1::::<>Node<>::
 SWUtils.gd::GDScript::-1::1707781891::0::1::::<>Node<>::
 UUID.gd::GDScript::-1::1707781891::0::1::::<>RefCounted<>::
-::res://resources/::1713215698
-user_preferences.gd::GDScript::-1::1713215698::0::1::::UserPreferences<>Resource<>::
-::res://scenes/::1713242185
-leaderboard.gd::GDScript::-1::1713216546::0::1::::<>Node<>::
+::res://resources/::1713309176
+user_preferences.gd::GDScript::-1::1713309176::0::1::::UserPreferences<>Resource<>::
+::res://scenes/::1713307334
+leaderboard.gd::GDScript::-1::1713307334::0::1::::<>Node<>::
 ::res://scenes/assets/::1711493919
 Nebula Aqua-Pink.png::CompressedTexture2D::7595532735833383423::1711492626::1711492640::1::::<><>::
 Stars Small_1.png::CompressedTexture2D::8727003362218378393::1711492648::1711492651::1::::<><>::
@@ -77,14 +78,14 @@ Stars-Big_1_1_PC.png::CompressedTexture2D::1859471626777394644::1711493899::1711
 ::res://scenes/entities/::1711492637
 ::res://scenes/entities/maps/::1710486078
 worldmap.tscn::PackedScene::6591396063280046972::1710486078::0::1::::<><>::uid://da5vbow88wi10::::res://scenes/entities/tilesets/MASTER TM - Basic.png
-::res://scenes/entities/Misc/::1713306241
-HUD.tscn::PackedScene::1334631136844355125::1713306241::0::1::::<><>::
-Keybinds.tscn::PackedScene::7115346452824246798::1713306241::0::1::::<><>::
-end_timer.tscn::PackedScene::1718395546958907163::1713306241::0::1::::<><>::
-Reset.tscn::PackedScene::4326698620308418460::1713306241::0::1::::<><>::
+::res://scenes/entities/Misc/::1713309176
+end_timer.tscn::PackedScene::1718395546958907163::1713309176::0::1::::<><>::
+HUD.tscn::PackedScene::1334631136844355125::1713309176::0::1::::<><>::
+Keybinds.tscn::PackedScene::7115346452824246798::1713309176::0::1::::<><>::
+Reset.tscn::PackedScene::4326698620308418460::1713309176::0::1::::<><>::
 start_timer.gd::GDScript::-1::1713243671::0::1::::<>Area2D<>::
-start_timer.tscn::PackedScene::4268527085036359765::1713306241::0::1::::<><>::
-::res://scenes/entities/player/::1713306241
+start_timer.tscn::PackedScene::4268527085036359765::1713309176::0::1::::<><>::
+::res://scenes/entities/player/::1713309176
 Camera2D.gd::GDScript::-1::1709443898::0::1::::<><>::
 DASH.gd::GDScript::-1::1712874884::0::1::::<><>::
 DASH.tscn::PackedScene::7424177998113645903::1710581806::0::1::::<><>::res://scenes/entities/player/DASH.gd
@@ -96,8 +97,8 @@ JUMP.gd::GDScript::-1::1711088720::0::1::::<><>::
 JUMP.tscn::PackedScene::8218373014039165044::1710581806::0::1::::<><>::res://scenes/entities/player/JUMP.gd
 MOVE.gd::GDScript::-1::1710490972::0::1::::<><>::
 MOVE.tscn::PackedScene::5032109220433790339::1710581806::0::1::::<><>::res://scenes/entities/player/MOVE.gd
-Player.gd::GDScript::-1::1713306237::0::1::::<>CharacterBody2D<>::
-player.tscn::PackedScene::8530648115087676401::1713306241::0::1::::<><>::res://scenes/entities/player/Player.gd<>uid://uefp3uxbj7ad::::res://scenes/entities/player/player_img.png<>res://scenes/entities/player/STATES.gd<>uid://dpdbnxwrn4bts::::res://scenes/entities/player/JUMP.tscn<>uid://ccigh1xgrquio::::res://scenes/entities/player/IDLE.tscn<>uid://cdxudr3i3rxr4::::res://scenes/entities/player/MOVE.tscn<>res://scenes/entities/player/IDLE.gd<>uid://ctubeawyfw8t::::res://scenes/entities/player/FALL.tscn<>uid://dd1lek0mo24kp::::res://scenes/entities/player/DASH.tscn<>uid://cuwbfqer1rk6a::::res://scenes/entities/player/WALLSLIDE.tscn<>uid://c4kl4pkmkxkqe::::res://scenes/entities/player/SLIDE.tscn<>res://scenes/entities/player/SLIDE.gd
+Player.gd::GDScript::-1::1713307237::0::1::::<>CharacterBody2D<>::
+player.tscn::PackedScene::8530648115087676401::1713309176::0::1::::<><>::res://scenes/entities/player/Player.gd<>uid://uefp3uxbj7ad::::res://scenes/entities/player/player_img.png<>res://scenes/entities/player/STATES.gd<>uid://dpdbnxwrn4bts::::res://scenes/entities/player/JUMP.tscn<>uid://ccigh1xgrquio::::res://scenes/entities/player/IDLE.tscn<>uid://cdxudr3i3rxr4::::res://scenes/entities/player/MOVE.tscn<>res://scenes/entities/player/IDLE.gd<>uid://ctubeawyfw8t::::res://scenes/entities/player/FALL.tscn<>uid://dd1lek0mo24kp::::res://scenes/entities/player/DASH.tscn<>uid://cuwbfqer1rk6a::::res://scenes/entities/player/WALLSLIDE.tscn<>uid://c4kl4pkmkxkqe::::res://scenes/entities/player/SLIDE.tscn<>res://scenes/entities/player/SLIDE.gd
 player_img.png::CompressedTexture2D::1412366258245926715::1703226238::1706398500::1::::<><>::
 SLIDE.gd::GDScript::-1::1712271355::0::1::::<><>::
 SLIDE.tscn::PackedScene::6829682089231212964::1707777103::0::1::::<><>::res://scenes/entities/player/MOVE.gd

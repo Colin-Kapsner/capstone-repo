@@ -108,7 +108,7 @@ func player_input():
 
 
 	# Restart (R)
-	if Input.is_action_just_pressed("Restart"):
+	if Input.is_action_just_pressed("Restart") and Leaderboard_delay.is_stopped():
 		position.x = 0
 		position.y = 0
 		velocity = Vector2.ZERO
@@ -174,9 +174,13 @@ func _on_start_timer_body_entered(body):
 func _on_end_timer_body_entered(body):
 	counting = false
 	if Leaderboard_delay.is_stopped():
+		$"../HUD/Control/Time".scale *=  2
+		$"../HUD/Control/Time".position = get_viewport_rect().size/2
+		$"../HUD/Control/Time".position.x -= 100
+		$"../HUD/Control/Time".position.y -= 100
 		Leaderboard_delay.start(delay)
 func _on_leaderboard_delay_timeout():
-	get_tree().change_scene_to_file("res://Leaderboard.tscn")
+	get_tree().change_scene_to_file("res://scenes/leaderboard.tscn")
 func timer_logic(delta: float):
 	if counting:
 		time_elapsed += delta

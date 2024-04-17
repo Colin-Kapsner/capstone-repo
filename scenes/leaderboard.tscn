@@ -1,0 +1,70 @@
+[gd_scene load_steps=5 format=3 uid="uid://sc5m2ydbwly8"]
+
+[ext_resource type="Script" path="res://scenes/leaderboard.gd" id="1_2rlug"]
+[ext_resource type="Texture2D" uid="uid://dghlkxqw02mt8" path="res://scenes/assets/Nebula Aqua-Pink.png" id="2_kakvf"]
+[ext_resource type="Texture2D" uid="uid://dwlop8yon2jth" path="res://scenes/assets/Stars Small_1.png" id="3_uo8dx"]
+[ext_resource type="Texture2D" uid="uid://dx8xfryed3hcs" path="res://scenes/assets/Stars Small_2.png" id="4_6oe6q"]
+
+[node name="Leaderboard" type="Node"]
+script = ExtResource("1_2rlug")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Refresh" type="Button" parent="CanvasLayer"]
+offset_left = 872.0
+offset_top = 604.0
+offset_right = 1069.0
+offset_bottom = 670.0
+text = "Refresh"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="CanvasLayer/Refresh"]
+
+[node name="Play Again" type="Button" parent="CanvasLayer"]
+offset_left = 872.0
+offset_top = 694.0
+offset_right = 1069.0
+offset_bottom = 760.0
+text = "Play Again"
+
+[node name="Quit" type="Button" parent="CanvasLayer"]
+offset_left = 872.0
+offset_top = 783.55
+offset_right = 1069.0
+offset_bottom = 849.551
+text = "Quit"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 846.675
+offset_top = 127.0
+offset_right = 946.675
+offset_bottom = 159.0
+scale = Vector2(2.615, 2.615)
+text = "Leaderboard"
+
+[node name="Background" type="Node" parent="."]
+
+[node name="NebulaAqua-pink" type="Sprite2D" parent="Background"]
+z_index = -4
+position = Vector2(988.4, 54.4)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("2_kakvf")
+metadata/_edit_lock_ = true
+
+[node name="StarsSmall1" type="Sprite2D" parent="Background"]
+z_index = -3
+position = Vector2(988.4, 54.4)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("3_uo8dx")
+metadata/_edit_lock_ = true
+
+[node name="StarsSmall2" type="Sprite2D" parent="Background"]
+z_index = -2
+position = Vector2(988.4, 54.4)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("4_6oe6q")
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="CanvasLayer/Refresh" to="." method="_on_refresh_pressed"]
+[connection signal="request_completed" from="CanvasLayer/Refresh/HTTPRequest" to="." method="_on_http_request_request_completed"]
+[connection signal="pressed" from="CanvasLayer/Play Again" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="CanvasLayer/Quit" to="." method="_on_quit_pressed"]

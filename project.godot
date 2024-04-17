@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Global="*res://global.gd"
+Global="*res://save_data.gd"
 SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
 
 [input]

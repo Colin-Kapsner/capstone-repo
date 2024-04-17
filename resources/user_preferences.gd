@@ -1,6 +1,13 @@
 class_name UserPreferences extends Resource
 
 
+@export var username := ""
+@export var user_token := ""
+
+
+
+
+
 func save() -> void:
 	ResourceSaver.save(self, "user://user_prefs.tres")
 
