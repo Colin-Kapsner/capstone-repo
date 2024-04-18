@@ -4,7 +4,7 @@ extends Node
 @onready var rich_text_label = $CanvasLayer/RichTextLabel
 
 
-var url = "https://Leaderboard-API.test/api/alltoptimes"
+var url = "http://leaderboard-api.csci.fun/api/alltoptimes"
 
 
 func _ready():
