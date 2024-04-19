@@ -1,3 +1,5 @@
+Button
+HTTPRequest
 RichTextLabel
 TextEdit
 Node2D
@@ -5,9 +7,7 @@ CollisionShape2D
 ColorRect
 Area2D
 Timer
-HTTPRequest
 CanvasLayer
-Button
 Node
 Container
 Control

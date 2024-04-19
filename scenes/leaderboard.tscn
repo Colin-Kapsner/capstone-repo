@@ -15,9 +15,11 @@ offset_left = 872.0
 offset_top = 604.0
 offset_right = 1069.0
 offset_bottom = 670.0
-text = "Update Leaderboard"
+text = "Refresh"
 
-[node name="HTTPRequest" type="HTTPRequest" parent="CanvasLayer/Refresh"]
+[node name="Global Leaderboard Request" type="HTTPRequest" parent="CanvasLayer/Refresh"]
+
+[node name="Personal Times Request" type="HTTPRequest" parent="CanvasLayer/Refresh"]
 
 [node name="Play Again" type="Button" parent="CanvasLayer"]
 offset_left = 872.0
@@ -26,20 +28,35 @@ offset_right = 1069.0
 offset_bottom = 760.0
 text = "Play Again"
 
-[node name="Quit" type="Button" parent="CanvasLayer"]
+[node name="Back" type="Button" parent="CanvasLayer"]
 offset_left = 872.0
 offset_top = 783.55
 offset_right = 1069.0
 offset_bottom = 849.551
-text = "Quit"
+text = "Menu"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
-offset_left = 846.675
+[node name="Leaderboard Label" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 876.675
 offset_top = 127.0
-offset_right = 946.675
+offset_right = 976.675
 offset_bottom = 159.0
-scale = Vector2(2.615, 2.615)
+scale = Vector2(2, 2)
 text = "Leaderboard"
+
+[node name="Leaderboard" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 840.0
+offset_top = 183.0
+offset_right = 976.0
+offset_bottom = 384.0
+scale = Vector2(2, 2)
+
+[node name="Personal Best" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 1265.0
+offset_top = 330.0
+offset_right = 1430.0
+offset_bottom = 361.0
+scale = Vector2(1.825, 1.825)
+text = "Your best time: "
 
 [node name="Background" type="Node" parent="."]
 
@@ -65,6 +82,7 @@ texture = ExtResource("4_6oe6q")
 metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="CanvasLayer/Refresh" to="." method="_on_refresh_pressed"]
-[connection signal="request_completed" from="CanvasLayer/Refresh/HTTPRequest" to="." method="_on_http_request_request_completed"]
+[connection signal="request_completed" from="CanvasLayer/Refresh/Global Leaderboard Request" to="." method="_on_global_leaderboard_request_request_completed"]
+[connection signal="request_completed" from="CanvasLayer/Refresh/Personal Times Request" to="." method="_on_personal_times_request_request_completed"]
 [connection signal="pressed" from="CanvasLayer/Play Again" to="." method="_on_play_again_pressed"]
-[connection signal="pressed" from="CanvasLayer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="CanvasLayer/Back" to="." method="_on_back_pressed"]

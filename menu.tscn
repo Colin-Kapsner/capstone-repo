@@ -22,10 +22,17 @@ text = "Play
 
 [node name="Quit" type="Button" parent="."]
 offset_left = 752.0
-offset_top = 692.0
+offset_top = 798.0
 offset_right = 1168.0
-offset_bottom = 756.0
+offset_bottom = 862.0
 text = "Quit"
+
+[node name="Leaderboard" type="Button" parent="."]
+offset_left = 752.0
+offset_top = 706.0
+offset_right = 1168.0
+offset_bottom = 770.0
+text = "Leaderboards"
 
 [node name="Control" parent="." instance=ExtResource("2_gia80")]
 offset_left = 657.455
@@ -95,3 +102,4 @@ metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Leaderboard" to="." method="_on_leaderboard_pressed"]
