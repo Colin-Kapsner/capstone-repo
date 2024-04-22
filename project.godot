@@ -11,14 +11,9 @@ config_version=5
 [application]
 
 config/name="Capstone"
-run/main_scene="res://menu.tscn"
+run/main_scene="res://signup.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
-
-[autoload]
-
-Global="*res://save_data.gd"
-SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
 
 [input]
 
