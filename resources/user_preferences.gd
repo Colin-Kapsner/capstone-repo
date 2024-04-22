@@ -1,7 +1,7 @@
 class_name UserPreferences extends Resource
 
 
-@export var username := ""
+
 @export var user_token := ""
 
 

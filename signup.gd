@@ -20,26 +20,32 @@ func _on_submit_pressed():
 	if $Username.text != "" and $Password.text != "":
 		entered_username = $Username.text
 		entered_password = $Password.text
-		data_to_send = [entered_username, entered_password]
+		data_to_send = {
+							"data":
+								{
+									"type": "users",
+									"attributes": {
+										"username": entered_username,
+										"password": entered_password,
+										"device_name": "Placeholder"
+									}
+								}
+						}
 	# Convert data to json string:
 	var query = JSON.stringify(data_to_send)
 	# Add 'Content-Type' header:
 	var headers = ["Content-Type: application/json"]
 	signup_request.request(signup_url, headers, HTTPClient.METHOD_POST, query)
-	bearer_token_request.request(bearer_token_url, headers, HTTPClient.METHOD_POST, query)
-
 
 
 
 func _on_bearer_token_request_request_completed(result, response_code, headers, body):
 	# Store data in user prefs
 	var token = JSON.parse_string(body.get_string_from_utf8())
-	print(token)
-	#$"res://resources/user_preferences.gd".user_token = token
 
-
-#{data:{type:"",attributes:{"username":"password","":""}}}
 
 
 func _on_signup_request_request_completed(result, response_code, headers, body):
-	pass # Replace with function body.
+	var myPrefs = UserPreferences.load_or_create()
+	myPrefs.user_token = JSON.parse_string(body.get_string_from_utf8()).token
+	myPrefs.save()

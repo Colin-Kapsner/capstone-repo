@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-@export var ghost_node : PackedScene
-
+var myPrefs = UserPreferences.load_or_create()
+var data_to_send
 # player input
 var movement_input = Vector2.ZERO
 var jump_input = false
@@ -171,6 +171,8 @@ func cam_physics():
 func _on_start_timer_body_entered(body):
 	time_elapsed = 0
 	counting = true
+	
+#
 func _on_end_timer_body_entered(body):
 	counting = false
 	if Leaderboard_delay.is_stopped():
@@ -179,6 +181,20 @@ func _on_end_timer_body_entered(body):
 		$"../HUD/Control/Time".position.x -= 100
 		$"../HUD/Control/Time".position.y -= 100
 		Leaderboard_delay.start(delay)
+	
+		# Sending the users time
+	var headers = ["Content-Type: application/json", "Authorization: Bearer " + myPrefs.user_token]
+	data_to_send = {
+						"data":
+							{
+								"type": "users",
+								"attributes": {
+									"time": str(time_elapsed).pad_decimals(3),
+									"device_name": "Placeholder"
+								}
+							}
+					}
+
 func _on_leaderboard_delay_timeout():
 	get_tree().change_scene_to_file("res://scenes/leaderboard.tscn")
 func timer_logic(delta: float):
@@ -188,8 +204,6 @@ func timer_logic(delta: float):
 		$"../HUD/Control/Time".text = " " + str(time_elapsed).pad_decimals(3)
 	else:
 		pass
-
-
 
 # Dash particle logic
 func particle_logic():
@@ -204,3 +218,5 @@ func _on_reset_body_entered(body):
 	has_jump = true
 
 
+func _on_send_time_request_request_completed(result, response_code, headers, body):
+	pass # Replace with function body.

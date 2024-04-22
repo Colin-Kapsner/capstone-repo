@@ -184,4 +184,7 @@ libraries = {
 "": SubResource("AnimationLibrary_7a4cl")
 }
 
+[node name="Send Time Request" type="HTTPRequest" parent="."]
+
 [connection signal="timeout" from="Timers/Leaderboard_delay" to="." method="_on_leaderboard_delay_timeout"]
+[connection signal="request_completed" from="Send Time Request" to="." method="_on_send_time_request_request_completed"]

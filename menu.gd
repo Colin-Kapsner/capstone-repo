@@ -3,7 +3,8 @@ extends Node2D
 
 func _ready():
 	get_window().mode = Window.MODE_FULLSCREEN
-	if user_preferences.user_token == "":
+	var myPrefs = UserPreferences.load_or_create()
+	if myPrefs.user_token == "":
 		get_tree().change_scene_to_file("res://signup.tscn")
 	pass
 
