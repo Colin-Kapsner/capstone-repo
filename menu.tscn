@@ -13,65 +13,80 @@
 script = ExtResource("1_4507q")
 
 [node name="Play" type="Button" parent="."]
-offset_left = 752.0
-offset_top = 607.0
-offset_right = 1168.0
-offset_bottom = 671.0
+texture_filter = 1
+offset_left = 458.0
+offset_top = 420.0
+offset_right = 874.0
+offset_bottom = 484.0
+scale = Vector2(0.505, 0.505)
+theme_override_font_sizes/font_size = 35
 text = "Play"
 
 [node name="Quit" type="Button" parent="."]
-offset_left = 752.0
-offset_top = 798.0
-offset_right = 1168.0
-offset_bottom = 862.0
+texture_filter = 1
+offset_left = 458.0
+offset_top = 517.0
+offset_right = 874.0
+offset_bottom = 581.0
+scale = Vector2(0.505, 0.505)
+theme_override_font_sizes/font_size = 35
 text = "Quit"
 
 [node name="Leaderboard" type="Button" parent="."]
-offset_left = 752.0
-offset_top = 706.0
-offset_right = 1168.0
-offset_bottom = 770.0
+texture_filter = 1
+offset_left = 458.0
+offset_top = 469.0
+offset_right = 874.0
+offset_bottom = 533.0
+scale = Vector2(0.505, 0.505)
+theme_override_font_sizes/font_size = 35
 text = "Leaderboard"
 
-[node name="Control" parent="." instance=ExtResource("2_gia80")]
-offset_left = 657.455
-offset_top = 201.0
-offset_right = 977.455
-offset_bottom = 569.0
-
 [node name="StartTimer" parent="." instance=ExtResource("3_6bppj")]
-position = Vector2(1152, 266)
+texture_filter = 1
+position = Vector2(821, 144)
+scale = Vector2(0.7, 0.7)
 
 [node name="EndTimer" parent="." instance=ExtResource("4_3otag")]
-position = Vector2(1152, 384)
+texture_filter = 1
+position = Vector2(821, 222)
+scale = Vector2(0.7, 0.7)
 
 [node name="Reset" parent="." instance=ExtResource("5_wvpns")]
-position = Vector2(1153, 514)
+texture_filter = 1
+position = Vector2(820, 315)
+scale = Vector2(0.7, 0.7)
 
 [node name="Starts Timer" type="Label" parent="."]
-offset_left = 1010.0
-offset_top = 245.0
-offset_right = 1121.0
-offset_bottom = 268.0
-theme_override_font_sizes/font_size = 0
+texture_filter = 1
+offset_left = 600.0
+offset_top = 111.0
+offset_right = 840.0
+offset_bottom = 160.0
+scale = Vector2(0.7, 0.7)
+theme_override_font_sizes/font_size = 35
 text = "Starts timer ->
 "
 
 [node name="Ends Timer" type="Label" parent="."]
-offset_left = 1010.0
-offset_top = 372.0
-offset_right = 1112.0
-offset_bottom = 395.0
-theme_override_font_sizes/font_size = 0
+texture_filter = 1
+offset_left = 600.0
+offset_top = 199.0
+offset_right = 822.0
+offset_bottom = 248.0
+scale = Vector2(0.7, 0.7)
+theme_override_font_sizes/font_size = 35
 text = "Ends timer ->
 "
 
 [node name="Resets Jump and Dash" type="Label" parent="."]
-offset_left = 1010.0
-offset_top = 484.705
-offset_right = 1105.0
-offset_bottom = 533.705
-theme_override_font_sizes/font_size = 0
+texture_filter = 1
+offset_left = 600.0
+offset_top = 274.0
+offset_right = 806.0
+offset_bottom = 375.0
+scale = Vector2(0.7, 0.7)
+theme_override_font_sizes/font_size = 35
 text = "Resets Jump 
 and Dash ->
 "
@@ -98,6 +113,13 @@ position = Vector2(988.4, 54.4)
 scale = Vector2(0.55, 0.55)
 texture = ExtResource("8_lk51m")
 metadata/_edit_lock_ = true
+
+[node name="Control" parent="." instance=ExtResource("2_gia80")]
+offset_left = 211.0
+offset_top = 121.0
+offset_right = 757.0
+offset_bottom = 477.0
+scale = Vector2(0.595, 0.595)
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

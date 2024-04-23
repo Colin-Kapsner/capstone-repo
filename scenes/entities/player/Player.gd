@@ -76,7 +76,7 @@ func _physics_process(delta):
 	particle_logic()
 	change_state(current_state.update(delta))
 	# temporary debug (make label in player.tscn called "current state")
-	$"current state".text = str(current_state.get_name())
+	#$"current state".text = str(current_state.get_name())
 	move_and_slide()
 
 # Setting some values (probably not necessary)

@@ -44,7 +44,7 @@ func update(delta):
 
 func jump_movement():
 	if wall_jump_lock:
-		Player.velocity.x = -Player.last_wall_on.x * (Player.SPEED + 10)
+		Player.velocity.x = -Player.last_wall_on.x * (Player.SPEED + 5)
 	if Player.jump_input == false:
 		if Player.velocity.y < Player.min_jump_velocity:
 			Player.velocity.y /= 2

@@ -9,35 +9,38 @@
 script = ExtResource("1_c3hgb")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 851.0
-offset_top = 319.0
-offset_right = 1139.0
-offset_bottom = 467.0
+offset_left = 402.0
+offset_top = 150.0
+offset_right = 1064.0
+offset_bottom = 473.0
+scale = Vector2(0.425, 0.425)
+theme_override_font_sizes/normal_font_size = 36
 text = "An account is necessary to access and participate in the leaderboard, you wont ever have to login   :)
 
-Note: Read the controls"
+P.S. Read the controls"
 
 [node name="Username" type="TextEdit" parent="."]
-offset_left = 907.0
-offset_top = 473.0
-offset_right = 1055.0
-offset_bottom = 511.0
+offset_left = 458.0
+offset_top = 304.0
+offset_right = 606.0
+offset_bottom = 342.0
 placeholder_text = "Username"
 scroll_fit_content_height = true
 
 [node name="Password" type="LineEdit" parent="."]
-offset_left = 907.0
-offset_top = 536.0
-offset_right = 1055.0
-offset_bottom = 574.0
+offset_left = 458.0
+offset_top = 367.0
+offset_right = 606.0
+offset_bottom = 405.0
 placeholder_text = "Password"
 secret = true
 
 [node name="Submit" type="Button" parent="."]
-offset_left = 908.0
-offset_top = 595.0
-offset_right = 1057.0
-offset_bottom = 639.0
+offset_left = 459.0
+offset_top = 426.0
+offset_right = 608.0
+offset_bottom = 470.0
+theme_override_font_sizes/font_size = 20
 text = "Submit"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

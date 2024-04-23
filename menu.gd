@@ -7,7 +7,7 @@ func _ready():
 	get_window().mode = Window.MODE_FULLSCREEN
 	# The below line will DELETE ALL USER PREFERENCES, DO NOT UNCOMMENT!!!
 	#DirAccess.remove_absolute("user://user_prefs.tres")
-	
+	#print(get_tree().root.content_scale_size.x)
 
 func _on_play_pressed():
 	if myPrefs.user_token == "":
