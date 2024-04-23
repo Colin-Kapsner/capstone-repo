@@ -1,5 +1,4 @@
 res://world.tscn
-res://signup.gd
 res://menu.tscn
 res://scenes/entities/player/player.tscn
 res://scenes/entities/Misc/Reset.tscn
@@ -9,6 +8,6 @@ res://scenes/leaderboard.tscn
 res://scenes/entities/Misc/start_timer.tscn
 res://scenes/entities/Misc/end_timer.tscn
 res://signup.tscn
-res://resources/user_preferences.gd
-res://menu.gd
+res://scenes/entities/maps/worldmap.tscn
 res://scenes/entities/player/Player.gd
+res://scenes/entities/player/FALL.gd

@@ -17,8 +17,7 @@ offset_left = 752.0
 offset_top = 607.0
 offset_right = 1168.0
 offset_bottom = 671.0
-text = "Play
-"
+text = "Play"
 
 [node name="Quit" type="Button" parent="."]
 offset_left = 752.0
@@ -32,7 +31,7 @@ offset_left = 752.0
 offset_top = 706.0
 offset_right = 1168.0
 offset_bottom = 770.0
-text = "Leaderboards"
+text = "Leaderboard"
 
 [node name="Control" parent="." instance=ExtResource("2_gia80")]
 offset_left = 657.455
@@ -49,7 +48,7 @@ position = Vector2(1152, 384)
 [node name="Reset" parent="." instance=ExtResource("5_wvpns")]
 position = Vector2(1153, 514)
 
-[node name="Label" type="Label" parent="."]
+[node name="Starts Timer" type="Label" parent="."]
 offset_left = 1010.0
 offset_top = 245.0
 offset_right = 1121.0
@@ -58,7 +57,7 @@ theme_override_font_sizes/font_size = 0
 text = "Starts timer ->
 "
 
-[node name="Label2" type="Label" parent="."]
+[node name="Ends Timer" type="Label" parent="."]
 offset_left = 1010.0
 offset_top = 372.0
 offset_right = 1112.0
@@ -67,7 +66,7 @@ theme_override_font_sizes/font_size = 0
 text = "Ends timer ->
 "
 
-[node name="Label3" type="Label" parent="."]
+[node name="Resets Jump and Dash" type="Label" parent="."]
 offset_left = 1010.0
 offset_top = 484.705
 offset_right = 1105.0

@@ -13,7 +13,9 @@ func save() -> void:
 
 
 static func load_or_create() -> UserPreferences:
-	var res: UserPreferences = load("user://user_prefs.tres") as UserPreferences
-	if !res:
+	var res
+	if FileAccess.file_exists("user://user_prefs.tres"):
+		res = load("user://user_prefs.tres") as UserPreferences
+	else:
 		res = UserPreferences.new()
 	return res

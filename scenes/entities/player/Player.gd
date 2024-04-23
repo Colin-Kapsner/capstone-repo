@@ -1,9 +1,15 @@
 extends CharacterBody2D
 
+
+# Sending time to db
 var myPrefs = UserPreferences.load_or_create()
 var data_to_send
+@onready var send_time_request = $"Send Time Request"
+var send_time_url = "http://leaderboard-api.csci.fun/api/v1/times"
+
+
 # player input
-var movement_input = Vector2.ZERO
+var movement_input
 var jump_input = false
 var jump_input_actuation = false
 var slide_input = false
@@ -70,7 +76,7 @@ func _physics_process(delta):
 	particle_logic()
 	change_state(current_state.update(delta))
 	# temporary debug (make label in player.tscn called "current state")
-	#$"current state".text = str(current_state.get_name())
+	$"current state".text = str(current_state.get_name())
 	move_and_slide()
 
 # Setting some values (probably not necessary)
@@ -182,18 +188,12 @@ func _on_end_timer_body_entered(body):
 		$"../HUD/Control/Time".position.y -= 100
 		Leaderboard_delay.start(delay)
 	
-		# Sending the users time
+	# getting request ready
 	var headers = ["Content-Type: application/json", "Authorization: Bearer " + myPrefs.user_token]
-	data_to_send = {
-						"data":
-							{
-								"type": "users",
-								"attributes": {
-									"time": str(time_elapsed).pad_decimals(3),
-									"device_name": "Placeholder"
-								}
-							}
-					}
+	data_to_send = {"data":{"type": "times","attributes": {"time": str(time_elapsed).pad_decimals(3)}}}
+	var query = JSON.stringify(data_to_send)
+	send_time_request.request(send_time_url, headers, HTTPClient.METHOD_POST, query)
+	
 
 func _on_leaderboard_delay_timeout():
 	get_tree().change_scene_to_file("res://scenes/leaderboard.tscn")

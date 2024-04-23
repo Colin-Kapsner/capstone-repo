@@ -186,5 +186,12 @@ libraries = {
 
 [node name="Send Time Request" type="HTTPRequest" parent="."]
 
+[node name="current state" type="Label" parent="."]
+offset_left = -42.0
+offset_top = -47.0
+offset_right = 56.0
+offset_bottom = -24.0
+text = "State: "
+
 [connection signal="timeout" from="Timers/Leaderboard_delay" to="." method="_on_leaderboard_delay_timeout"]
 [connection signal="request_completed" from="Send Time Request" to="." method="_on_send_time_request_request_completed"]

@@ -1,3 +1,5 @@
+Label
+LineEdit
 HTTPRequest
 Button
 RichTextLabel
@@ -10,5 +12,3 @@ Timer
 CanvasLayer
 Node
 Container
-Control
-Label

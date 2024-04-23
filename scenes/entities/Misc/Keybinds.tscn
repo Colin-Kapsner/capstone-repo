@@ -18,6 +18,7 @@ cache/0/17/0/kerning_overrides/17/0 = Vector2(0, 0)
 cache/0/17/0/kerning_overrides/16/0 = Vector2(0, 0)
 cache/0/17/0/kerning_overrides/15/0 = Vector2(0, 0)
 cache/0/17/0/kerning_overrides/14/0 = Vector2(0, 0)
+cache/0/17/0/kerning_overrides/13/0 = Vector2(0, 0)
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -27,6 +28,7 @@ cache/0/16/0/kerning_overrides/17/0 = Vector2(0, 0)
 cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 cache/0/16/0/kerning_overrides/15/0 = Vector2(0, 0)
 cache/0/16/0/kerning_overrides/14/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/13/0 = Vector2(0, 0)
 cache/0/15/0/ascent = 0.0
 cache/0/15/0/descent = 0.0
 cache/0/15/0/underline_position = 0.0
@@ -36,6 +38,7 @@ cache/0/15/0/kerning_overrides/17/0 = Vector2(0, 0)
 cache/0/15/0/kerning_overrides/16/0 = Vector2(0, 0)
 cache/0/15/0/kerning_overrides/15/0 = Vector2(0, 0)
 cache/0/15/0/kerning_overrides/14/0 = Vector2(0, 0)
+cache/0/15/0/kerning_overrides/13/0 = Vector2(0, 0)
 cache/0/14/0/ascent = 0.0
 cache/0/14/0/descent = 0.0
 cache/0/14/0/underline_position = 0.0
@@ -45,12 +48,23 @@ cache/0/14/0/kerning_overrides/17/0 = Vector2(0, 0)
 cache/0/14/0/kerning_overrides/16/0 = Vector2(0, 0)
 cache/0/14/0/kerning_overrides/15/0 = Vector2(0, 0)
 cache/0/14/0/kerning_overrides/14/0 = Vector2(0, 0)
+cache/0/14/0/kerning_overrides/13/0 = Vector2(0, 0)
+cache/0/13/0/ascent = 0.0
+cache/0/13/0/descent = 0.0
+cache/0/13/0/underline_position = 0.0
+cache/0/13/0/underline_thickness = 0.0
+cache/0/13/0/scale = 1.0
+cache/0/13/0/kerning_overrides/17/0 = Vector2(0, 0)
+cache/0/13/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/13/0/kerning_overrides/15/0 = Vector2(0, 0)
+cache/0/13/0/kerning_overrides/14/0 = Vector2(0, 0)
+cache/0/13/0/kerning_overrides/13/0 = Vector2(0, 0)
 
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 320.0
-offset_bottom = 368.0
+offset_bottom = 345.0
 
 [node name="ColorRect" type="ColorRect" parent="."]
 modulate = Color(0.952941, 0.952941, 0.952941, 1)
@@ -140,13 +154,13 @@ text = "Slide:"
 texture_filter = 1
 layout_mode = 0
 offset_left = 64.0
-offset_top = 216.0
-offset_right = 144.0
-offset_bottom = 240.0
+offset_top = 219.0
+offset_right = 180.0
+offset_bottom = 243.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontFile_6poc7")
-theme_override_font_sizes/font_size = 17
-text = "Jump:"
+theme_override_font_sizes/font_size = 13
+text = "Jump/Double Jump:"
 
 [node name="Dash" type="Label" parent="ColorRect"]
 texture_filter = 1
@@ -245,16 +259,3 @@ theme_override_fonts/font = SubResource("FontFile_6poc7")
 theme_override_font_sizes/font_size = 17
 text = "R
 "
-
-[node name="Hint" type="Label" parent="ColorRect"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 56.0
-offset_top = 336.0
-offset_right = 264.0
-offset_bottom = 360.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = SubResource("FontFile_6poc7")
-theme_override_font_sizes/font_size = 14
-text = "(Hint: Dash -> Slide -> Jump)"
-horizontal_alignment = 1
