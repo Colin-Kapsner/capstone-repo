@@ -14,9 +14,9 @@ script = ExtResource("1_4507q")
 
 [node name="Play" type="Button" parent="."]
 texture_filter = 1
-offset_left = 458.0
+offset_left = 471.0
 offset_top = 420.0
-offset_right = 874.0
+offset_right = 887.0
 offset_bottom = 484.0
 scale = Vector2(0.505, 0.505)
 theme_override_font_sizes/font_size = 35
@@ -24,9 +24,9 @@ text = "Play"
 
 [node name="Quit" type="Button" parent="."]
 texture_filter = 1
-offset_left = 458.0
+offset_left = 471.0
 offset_top = 517.0
-offset_right = 874.0
+offset_right = 887.0
 offset_bottom = 581.0
 scale = Vector2(0.505, 0.505)
 theme_override_font_sizes/font_size = 35
@@ -34,9 +34,9 @@ text = "Quit"
 
 [node name="Leaderboard" type="Button" parent="."]
 texture_filter = 1
-offset_left = 458.0
+offset_left = 471.0
 offset_top = 469.0
-offset_right = 874.0
+offset_right = 887.0
 offset_bottom = 533.0
 scale = Vector2(0.505, 0.505)
 theme_override_font_sizes/font_size = 35
@@ -44,24 +44,24 @@ text = "Leaderboard"
 
 [node name="StartTimer" parent="." instance=ExtResource("3_6bppj")]
 texture_filter = 1
-position = Vector2(821, 144)
+position = Vector2(834, 144)
 scale = Vector2(0.7, 0.7)
 
 [node name="EndTimer" parent="." instance=ExtResource("4_3otag")]
 texture_filter = 1
-position = Vector2(821, 222)
+position = Vector2(834, 222)
 scale = Vector2(0.7, 0.7)
 
 [node name="Reset" parent="." instance=ExtResource("5_wvpns")]
 texture_filter = 1
-position = Vector2(820, 315)
+position = Vector2(833, 315)
 scale = Vector2(0.7, 0.7)
 
 [node name="Starts Timer" type="Label" parent="."]
 texture_filter = 1
-offset_left = 600.0
+offset_left = 613.0
 offset_top = 111.0
-offset_right = 840.0
+offset_right = 853.0
 offset_bottom = 160.0
 scale = Vector2(0.7, 0.7)
 theme_override_font_sizes/font_size = 35
@@ -70,9 +70,9 @@ text = "Starts timer ->
 
 [node name="Ends Timer" type="Label" parent="."]
 texture_filter = 1
-offset_left = 600.0
+offset_left = 613.0
 offset_top = 199.0
-offset_right = 822.0
+offset_right = 835.0
 offset_bottom = 248.0
 scale = Vector2(0.7, 0.7)
 theme_override_font_sizes/font_size = 35
@@ -81,9 +81,9 @@ text = "Ends timer ->
 
 [node name="Resets Jump and Dash" type="Label" parent="."]
 texture_filter = 1
-offset_left = 600.0
+offset_left = 613.0
 offset_top = 274.0
-offset_right = 806.0
+offset_right = 819.0
 offset_bottom = 375.0
 scale = Vector2(0.7, 0.7)
 theme_override_font_sizes/font_size = 35
@@ -115,9 +115,9 @@ texture = ExtResource("8_lk51m")
 metadata/_edit_lock_ = true
 
 [node name="Control" parent="." instance=ExtResource("2_gia80")]
-offset_left = 211.0
+offset_left = 224.0
 offset_top = 121.0
-offset_right = 757.0
+offset_right = 770.0
 offset_bottom = 477.0
 scale = Vector2(0.595, 0.595)
 

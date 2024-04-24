@@ -111,7 +111,6 @@ metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(125, -125)
-zoom = Vector2(0.89, 0.89)
 limit_smoothed = true
 position_smoothing_enabled = true
 drag_horizontal_enabled = true

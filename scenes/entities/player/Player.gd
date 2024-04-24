@@ -58,6 +58,8 @@ var delay = 2.5
 # Always happening
 func _process(delta: float) -> void:
 	timer_logic(delta)
+	if is_on_floor():
+		has_dash = true
 
 # When the Player loads in
 func _ready():

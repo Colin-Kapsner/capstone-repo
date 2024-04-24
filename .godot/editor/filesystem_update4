@@ -10,3 +10,5 @@ res://scenes/entities/Misc/start_timer.tscn
 res://scenes/entities/Misc/end_timer.tscn
 res://signup.tscn
 res://scenes/entities/maps/worldmap.tscn
+res://scenes/entities/player/JUMP.gd
+res://scenes/entities/player/Player.gd
