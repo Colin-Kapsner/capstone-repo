@@ -10449,13 +10449,14 @@ text = "D"
 texture_filter = 1
 layout_mode = 0
 offset_left = 411.043
-offset_top = 140.123
-offset_right = 491.043
-offset_bottom = 187.123
+offset_top = 142.577
+offset_right = 537.043
+offset_bottom = 189.577
+scale = Vector2(0.905, 0.905)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontFile_6poc7")
 theme_override_font_sizes/font_size = 35
-text = "S"
+text = "S (Hold)"
 
 [node name="P" type="Label" parent="ColorRect"]
 texture_filter = 1

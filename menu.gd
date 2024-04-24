@@ -5,9 +5,10 @@ var myPrefs = UserPreferences.load_or_create()
 
 func _ready():
 	get_window().mode = Window.MODE_FULLSCREEN
-	# The below line will DELETE ALL USER PREFERENCES, DO NOT UNCOMMENT!!!
+	# The below lines will DELETE ALL USER PREFERENCES, DO NOT UNCOMMENT!!!
+	# If uncommented, COMMENT
 	#DirAccess.remove_absolute("user://user_prefs.tres")
-	#print(get_tree().root.content_scale_size.x)
+	#get_tree().quit()
 
 func _on_play_pressed():
 	if myPrefs.user_token == "":

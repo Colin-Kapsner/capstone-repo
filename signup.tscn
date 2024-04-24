@@ -9,9 +9,9 @@
 script = ExtResource("1_c3hgb")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 402.0
+offset_left = 434.0
 offset_top = 150.0
-offset_right = 1064.0
+offset_right = 1096.0
 offset_bottom = 473.0
 scale = Vector2(0.425, 0.425)
 theme_override_font_sizes/normal_font_size = 36
@@ -20,25 +20,25 @@ text = "An account is necessary to access and participate in the leaderboard, yo
 P.S. Read the controls"
 
 [node name="Username" type="TextEdit" parent="."]
-offset_left = 458.0
+offset_left = 490.0
 offset_top = 304.0
-offset_right = 606.0
+offset_right = 638.0
 offset_bottom = 342.0
 placeholder_text = "Username"
 scroll_fit_content_height = true
 
 [node name="Password" type="LineEdit" parent="."]
-offset_left = 458.0
+offset_left = 490.0
 offset_top = 367.0
-offset_right = 606.0
+offset_right = 638.0
 offset_bottom = 405.0
 placeholder_text = "Password"
 secret = true
 
 [node name="Submit" type="Button" parent="."]
-offset_left = 459.0
+offset_left = 491.0
 offset_top = 426.0
-offset_right = 608.0
+offset_right = 640.0
 offset_bottom = 470.0
 theme_override_font_sizes/font_size = 20
 text = "Submit"
