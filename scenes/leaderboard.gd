@@ -23,7 +23,8 @@ func _on_back_pressed():
 	get_tree().change_scene_to_file("res://menu.tscn")
 
 func update_leaderboard():
-	$CanvasLayer/Leaderboard.text = ""
+	$"CanvasLayer/Leaderboard Names".text = ""
+	$"CanvasLayer/Leaderboard Times".text = ""
 	$"CanvasLayer/Personal Leaderboard".text = ""
 	global_times_request.request(global_times_url)
 	personal_times_request.request(personal_times_url, headers, HTTPClient.METHOD_GET)
@@ -31,10 +32,11 @@ func update_leaderboard():
 
 func _on_global_leaderboard_request_request_completed(result, response_code, headers, body):
 	var global_leaderboard_data = JSON.parse_string(body.get_string_from_utf8())
-	
 	var leaderboard_place = 1
 	for time in global_leaderboard_data.data:
-		$CanvasLayer/Leaderboard.text += (str(leaderboard_place) + "." + "      " + str(time.attributes.time) + "      " + time.attributes.user + "\n")
+		$"CanvasLayer/Leaderboard Names".text += (str(leaderboard_place) + "." + "       " + time.attributes.user + "\n")
+		$"CanvasLayer/Leaderboard Times".text += (str(time.attributes.time) + "\n")
+		
 		leaderboard_place += 1
 	
 

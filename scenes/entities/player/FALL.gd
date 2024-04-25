@@ -20,7 +20,7 @@ func update(delta):
 	if Player.jump_input_actuation and Player.has_jump:
 		Player.has_jump = false
 		return STATES.JUMP
-	if !Player.slide_input:
+	if (!Player.slide_input and !Player.movement_input) or (Player.velocity.x < 0 and Player.movement_input.x == 1) or (Player.velocity.x > 0 and Player.movement_input.x == -1) or Player.prev_state == STATES.DASH:
 		is_player_movement = true
 	if Player.is_on_floor() and Player.velocity == Vector2.ZERO:
 		return STATES.IDLE

@@ -4,7 +4,7 @@ var dash_direction = Vector2.ZERO
 var dashing = false
 var dash_slide_boost = 80
 @export var dash_speed = 450
-@export var dash_duration = .19
+@export var dash_duration = .22
 @onready var DashDuration_timer = $DashDuration
 
 func enter_state():

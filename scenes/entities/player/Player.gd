@@ -120,7 +120,6 @@ func player_input():
 		position.x = 0
 		position.y = 0
 		velocity = Vector2.ZERO
-		time_elapsed = 0.0
 		counting = false
 
 	# Movement (WASD)
@@ -164,6 +163,8 @@ func get_next_to_wall():
 				return Vector2.RIGHT
 			else:
 				return Vector2.LEFT
+		if !movement_input:
+			velocity.x = 0
 	return null
 
 # Camera functionality
