@@ -163,8 +163,6 @@ func get_next_to_wall():
 				return Vector2.RIGHT
 			else:
 				return Vector2.LEFT
-		if !movement_input:
-			velocity.x = 0
 	return null
 
 # Camera functionality

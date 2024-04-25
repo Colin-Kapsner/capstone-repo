@@ -10,7 +10,6 @@ res://scenes/entities/Misc/start_timer.tscn
 res://scenes/entities/Misc/end_timer.tscn
 res://signup.tscn
 res://scenes/entities/maps/worldmap.tscn
-res://scenes/entities/player/DASH.gd
-res://scenes/leaderboard.gd
 res://scenes/entities/player/Player.gd
 res://scenes/entities/player/WALLSLIDE.gd
+res://menu.gd

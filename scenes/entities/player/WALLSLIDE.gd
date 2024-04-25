@@ -1,7 +1,7 @@
 extends "state.gd"
 
 
-@export var wallslide_friction = .55
+@export var wallslide_friction = .7
 
 
 func enter_state():
