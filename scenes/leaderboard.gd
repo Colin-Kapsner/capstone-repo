@@ -32,12 +32,13 @@ func update_leaderboard():
 
 func _on_global_leaderboard_request_request_completed(result, response_code, headers, body):
 	var global_leaderboard_data = JSON.parse_string(body.get_string_from_utf8())
+	print(global_leaderboard_data)
 	var leaderboard_place = 1
 	for time in global_leaderboard_data.data:
 		$"CanvasLayer/Leaderboard Names".text += (str(leaderboard_place) + "." + "    " + time.attributes.user + "\n")
 		$"CanvasLayer/Leaderboard Times".text += (str(time.attributes.time) + "\n")
-		
 		leaderboard_place += 1
+	
 	
 
 

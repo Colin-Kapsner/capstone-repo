@@ -10469,7 +10469,7 @@ offset_bottom = 227.123
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontFile_6poc7")
 theme_override_font_sizes/font_size = 35
-text = "P"
+text = "P or LMB"
 
 [node name="Space" type="Label" parent="ColorRect"]
 texture_filter = 1
