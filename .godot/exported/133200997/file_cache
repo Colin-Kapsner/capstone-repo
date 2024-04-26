@@ -7,7 +7,7 @@ res://scenes/entities/player/MOVE.tscn::f127e367ac30b97aca90cdd29959d79c::171058
 res://scenes/entities/player/player.tscn::00388ed77c61dc58a04e09383015c5cb::1714087100::res://.godot/exported/133200997/export-10115b49211bd47e29dc5d9c5cfa031d-player.scn
 res://scenes/entities/player/SLIDE.tscn::9af29cd5bc01a8da871796dcaf62df18::1707777103::res://.godot/exported/133200997/export-39565d0c0e10b0aea3c17ca2002b6fea-SLIDE.scn
 res://scenes/entities/player/WALLSLIDE.tscn::47d83f1455b3e6a98b5c7d420b336fc7::1710581806::res://.godot/exported/133200997/export-87235429869ab0385689f3dace6a609d-WALLSLIDE.scn
-res://world.tscn::72b217b68b4de80c2339c376c00748ee::1714087100::res://.godot/exported/133200997/export-76e0adcbc83681695885bae615f516ae-world.scn
+res://world.tscn::72b217b68b4de80c2339c376c00748ee::1714088760::res://.godot/exported/133200997/export-76e0adcbc83681695885bae615f516ae-world.scn
 res://scenes/entities/Misc/end_timer.tscn::0e27547699d9d2a8a64a258bba466310::1714087101::res://.godot/exported/133200997/export-1816481fcfc8c2f0acff8dc8183c3635-end_timer.scn
 res://scenes/entities/Misc/HUD.tscn::051fd10b7b7324d19efcd5b9b5e18398::1714087101::res://.godot/exported/133200997/export-448a301455edd9e0b8cf11312e2df5b0-HUD.scn
 res://scenes/entities/Misc/Keybinds.tscn::dc3659925d0496efd113bfb952a83a07::1714087101::res://.godot/exported/133200997/export-a733de6f0caf42346f6237a7e86adb73-Keybinds.scn

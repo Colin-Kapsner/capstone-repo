@@ -34,7 +34,7 @@ func _on_global_leaderboard_request_request_completed(result, response_code, hea
 	var global_leaderboard_data = JSON.parse_string(body.get_string_from_utf8())
 	var leaderboard_place = 1
 	for time in global_leaderboard_data.data:
-		$"CanvasLayer/Leaderboard Names".text += (str(leaderboard_place) + "." + "       " + time.attributes.user + "\n")
+		$"CanvasLayer/Leaderboard Names".text += (str(leaderboard_place) + "." + "    " + time.attributes.user + "\n")
 		$"CanvasLayer/Leaderboard Times".text += (str(time.attributes.time) + "\n")
 		
 		leaderboard_place += 1
@@ -43,9 +43,6 @@ func _on_global_leaderboard_request_request_completed(result, response_code, hea
 
 func _on_personal_times_request_request_completed(result, response_code, headers, body):
 	var personal_times_data = JSON.parse_string(body.get_string_from_utf8())
-	var personal_place = 1
-	for time in personal_times_data.data:
-		$"CanvasLayer/Personal Leaderboard".text += (str(personal_place) + "." + "      " + str(time.attributes.time) + "      \n")
-		personal_place += 1
+	$"CanvasLayer/Personal Leaderboard".text += (str(personal_times_data.data[0].attributes.time) + "      \n")
 
 

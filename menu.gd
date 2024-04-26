@@ -8,7 +8,6 @@ func _ready():
 	# The below lines will DELETE ALL USER PREFERENCES, DO NOT UNCOMMENT!!!
 	# If uncommented, COMMENT
 	#DirAccess.remove_absolute("user://user_prefs.tres")
-	#get_tree().quit()
 
 func _on_play_pressed():
 	if myPrefs.user_token == "":

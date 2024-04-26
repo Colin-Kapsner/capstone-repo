@@ -42,45 +42,48 @@ theme_override_font_sizes/font_size = 30
 text = "Menu"
 
 [node name="Leaderboard Label" type="RichTextLabel" parent="CanvasLayer"]
-offset_left = 350.0
+offset_left = 530.0
 offset_top = 43.0
-offset_right = 450.0
+offset_right = 630.0
 offset_bottom = 75.0
 scale = Vector2(1.625, 1.625)
 text = "Leaderboard"
 
 [node name="Leaderboard Times" type="RichTextLabel" parent="CanvasLayer"]
-offset_left = 440.0
+offset_left = 666.0
 offset_top = 111.0
-offset_right = 640.0
+offset_right = 871.0
 offset_bottom = 643.0
 scale = Vector2(0.585, 0.585)
 theme_override_font_sizes/normal_font_size = 35
+text = "|||"
 
 [node name="Leaderboard Names" type="RichTextLabel" parent="CanvasLayer"]
-offset_left = 289.0
+offset_left = 434.0
 offset_top = 111.0
-offset_right = 523.0
+offset_right = 816.0
 offset_bottom = 643.0
 scale = Vector2(0.585, 0.585)
 theme_override_font_sizes/normal_font_size = 35
+text = "|||"
 
 [node name="Personal Leaderboard" type="RichTextLabel" parent="CanvasLayer"]
-offset_left = 697.0
-offset_top = 113.0
-offset_right = 1097.0
-offset_bottom = 645.0
-scale = Vector2(0.585, 0.585)
-theme_override_font_sizes/normal_font_size = 35
+offset_left = 865.0
+offset_top = 233.0
+offset_right = 1121.0
+offset_bottom = 339.0
+scale = Vector2(0.675, 0.675)
+theme_override_font_sizes/normal_font_size = 42
+text = "|||"
 
-[node name="Your best time" type="RichTextLabel" parent="CanvasLayer"]
-offset_left = 697.0
-offset_top = 47.0
-offset_right = 1041.0
-offset_bottom = 113.0
-scale = Vector2(0.55, 0.55)
+[node name="Your best time Label" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 809.0
+offset_top = 173.0
+offset_right = 1153.0
+offset_bottom = 239.0
+scale = Vector2(0.675, 0.675)
 theme_override_font_sizes/normal_font_size = 41
-text = "Your Best Times"
+text = "Your Best Time:"
 
 [node name="Background" type="Node" parent="."]
 
