@@ -10,41 +10,28 @@ script = ExtResource("1_2rlug")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Refresh" type="Button" parent="CanvasLayer"]
-offset_left = 526.0
-offset_top = 435.0
-offset_right = 723.0
-offset_bottom = 501.0
-scale = Vector2(0.58, 0.58)
-theme_override_font_sizes/font_size = 30
-text = "Refresh"
-
-[node name="Global Leaderboard Request" type="HTTPRequest" parent="CanvasLayer/Refresh"]
-
-[node name="Personal Times Request" type="HTTPRequest" parent="CanvasLayer/Refresh"]
-
 [node name="Play" type="Button" parent="CanvasLayer"]
 offset_left = 526.0
-offset_top = 497.0
+offset_top = 475.0
 offset_right = 723.0
-offset_bottom = 563.0
+offset_bottom = 541.0
 scale = Vector2(0.58, 0.58)
 theme_override_font_sizes/font_size = 30
-text = "Play"
+text = "Play (R)"
 
 [node name="Back" type="Button" parent="CanvasLayer"]
 offset_left = 526.0
-offset_top = 558.55
+offset_top = 536.55
 offset_right = 723.0
-offset_bottom = 624.551
+offset_bottom = 602.551
 scale = Vector2(0.58, 0.58)
 theme_override_font_sizes/font_size = 30
 text = "Menu"
 
 [node name="Leaderboard Label" type="RichTextLabel" parent="CanvasLayer"]
-offset_left = 530.0
+offset_left = 499.0
 offset_top = 43.0
-offset_right = 630.0
+offset_right = 599.0
 offset_bottom = 75.0
 scale = Vector2(1.625, 1.625)
 text = "Leaderboard"
@@ -68,22 +55,26 @@ theme_override_font_sizes/normal_font_size = 35
 text = "|||"
 
 [node name="Personal Leaderboard" type="RichTextLabel" parent="CanvasLayer"]
-offset_left = 865.0
+offset_left = 838.0
 offset_top = 233.0
-offset_right = 1121.0
+offset_right = 1180.0
 offset_bottom = 339.0
 scale = Vector2(0.675, 0.675)
 theme_override_font_sizes/normal_font_size = 42
 text = "|||"
 
 [node name="Your best time Label" type="RichTextLabel" parent="CanvasLayer"]
-offset_left = 809.0
+offset_left = 800.0
 offset_top = 173.0
-offset_right = 1153.0
+offset_right = 1144.0
 offset_bottom = 239.0
 scale = Vector2(0.675, 0.675)
 theme_override_font_sizes/normal_font_size = 41
 text = "Your Best Time:"
+
+[node name="Global Leaderboard Request" type="HTTPRequest" parent="CanvasLayer"]
+
+[node name="Personal Times Request" type="HTTPRequest" parent="CanvasLayer"]
 
 [node name="Background" type="Node" parent="."]
 
@@ -108,8 +99,7 @@ scale = Vector2(0.55, 0.55)
 texture = ExtResource("4_6oe6q")
 metadata/_edit_lock_ = true
 
-[connection signal="pressed" from="CanvasLayer/Refresh" to="." method="_on_refresh_pressed"]
-[connection signal="request_completed" from="CanvasLayer/Refresh/Global Leaderboard Request" to="." method="_on_global_leaderboard_request_request_completed"]
-[connection signal="request_completed" from="CanvasLayer/Refresh/Personal Times Request" to="." method="_on_personal_times_request_request_completed"]
 [connection signal="pressed" from="CanvasLayer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/Back" to="." method="_on_back_pressed"]
+[connection signal="request_completed" from="CanvasLayer/Global Leaderboard Request" to="." method="_on_global_leaderboard_request_request_completed"]
+[connection signal="request_completed" from="CanvasLayer/Personal Times Request" to="." method="_on_personal_times_request_request_completed"]

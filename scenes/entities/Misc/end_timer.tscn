@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://yqnyuqjvqgxf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2xxr7"]
-size = Vector2(6, 108)
+size = Vector2(6, 397)
 
 [node name="End Timer" type="Area2D"]
 
@@ -9,8 +9,9 @@ size = Vector2(6, 108)
 offset_left = -3.0
 offset_top = -54.0
 offset_right = 3.0
-offset_bottom = 54.0
+offset_bottom = 343.0
 color = Color(1, 0, 0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 144.5)
 shape = SubResource("RectangleShape2D_2xxr7")

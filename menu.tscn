@@ -1,9 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bqw5iim7r3cji"]
+[gd_scene load_steps=7 format=3 uid="uid://bqw5iim7r3cji"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_4507q"]
 [ext_resource type="PackedScene" uid="uid://c8myymj275foo" path="res://scenes/entities/Misc/Keybinds.tscn" id="2_gia80"]
-[ext_resource type="PackedScene" uid="uid://b12yauf5kylrh" path="res://scenes/entities/Misc/start_timer.tscn" id="3_6bppj"]
-[ext_resource type="PackedScene" uid="uid://yqnyuqjvqgxf" path="res://scenes/entities/Misc/end_timer.tscn" id="4_3otag"]
 [ext_resource type="PackedScene" uid="uid://b2v5dg284nv6s" path="res://scenes/entities/Misc/Reset.tscn" id="5_wvpns"]
 [ext_resource type="Texture2D" uid="uid://dghlkxqw02mt8" path="res://scenes/assets/Nebula Aqua-Pink.png" id="6_7alhm"]
 [ext_resource type="Texture2D" uid="uid://dwlop8yon2jth" path="res://scenes/assets/Stars Small_1.png" id="7_0rt0j"]
@@ -42,51 +40,19 @@ scale = Vector2(0.505, 0.505)
 theme_override_font_sizes/font_size = 35
 text = "Leaderboard"
 
-[node name="StartTimer" parent="." instance=ExtResource("3_6bppj")]
-texture_filter = 1
-position = Vector2(834, 144)
-scale = Vector2(0.7, 0.7)
-
-[node name="EndTimer" parent="." instance=ExtResource("4_3otag")]
-texture_filter = 1
-position = Vector2(834, 222)
-scale = Vector2(0.7, 0.7)
-
 [node name="Reset" parent="." instance=ExtResource("5_wvpns")]
 texture_filter = 1
-position = Vector2(833, 315)
+position = Vector2(833, 221)
 scale = Vector2(0.7, 0.7)
-
-[node name="Starts Timer" type="Label" parent="."]
-texture_filter = 1
-offset_left = 613.0
-offset_top = 111.0
-offset_right = 853.0
-offset_bottom = 160.0
-scale = Vector2(0.7, 0.7)
-theme_override_font_sizes/font_size = 35
-text = "Starts timer ->
-"
-
-[node name="Ends Timer" type="Label" parent="."]
-texture_filter = 1
-offset_left = 613.0
-offset_top = 199.0
-offset_right = 835.0
-offset_bottom = 248.0
-scale = Vector2(0.7, 0.7)
-theme_override_font_sizes/font_size = 35
-text = "Ends timer ->
-"
 
 [node name="Resets Jump and Dash" type="Label" parent="."]
 texture_filter = 1
-offset_left = 613.0
-offset_top = 274.0
-offset_right = 862.0
-offset_bottom = 375.0
+offset_left = 602.0
+offset_top = 189.0
+offset_right = 872.0
+offset_bottom = 306.0
 scale = Vector2(0.7, 0.7)
-theme_override_font_sizes/font_size = 35
+theme_override_font_sizes/font_size = 30
 text = "Resets Jump 
 and Dash ->
 "
