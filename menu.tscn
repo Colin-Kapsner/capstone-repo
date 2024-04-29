@@ -42,19 +42,41 @@ text = "Leaderboard"
 
 [node name="Reset" parent="." instance=ExtResource("5_wvpns")]
 texture_filter = 1
-position = Vector2(833, 221)
+position = Vector2(800, 300)
 scale = Vector2(0.7, 0.7)
 
 [node name="Resets Jump and Dash" type="Label" parent="."]
 texture_filter = 1
 offset_left = 602.0
-offset_top = 189.0
+offset_top = 270.0
 offset_right = 872.0
-offset_bottom = 306.0
+offset_bottom = 387.0
 scale = Vector2(0.7, 0.7)
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 25
 text = "Resets Jump 
 and Dash ->
+"
+
+[node name="Starts Timer" type="Label" parent="."]
+texture_filter = 1
+offset_left = 602.0
+offset_top = 132.0
+offset_right = 789.0
+offset_bottom = 175.0
+scale = Vector2(0.7, 0.7)
+theme_override_font_sizes/font_size = 25
+text = "Starts Timer ->
+"
+
+[node name="Ends Timer" type="Label" parent="."]
+texture_filter = 1
+offset_left = 602.0
+offset_top = 204.0
+offset_right = 789.0
+offset_bottom = 247.0
+scale = Vector2(0.7, 0.7)
+theme_override_font_sizes/font_size = 25
+text = "Ends Timer ->
 "
 
 [node name="Node" type="Node" parent="."]
@@ -86,6 +108,20 @@ offset_top = 121.0
 offset_right = 770.0
 offset_bottom = 477.0
 scale = Vector2(0.595, 0.595)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 798.0
+offset_top = 190.0
+offset_right = 802.0
+offset_bottom = 258.0
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 798.0
+offset_top = 117.0
+offset_right = 802.0
+offset_bottom = 185.0
+color = Color(0.109804, 0.317647, 0.568627, 1)
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
