@@ -47,10 +47,10 @@ func _on_global_leaderboard_request_request_completed(result, response_code, hea
 			pass
 		else:
 			if leaderboard_place <= 10:
-				usernames.append(time.attributes.user)
 				$"CanvasLayer/Leaderboard Names".text += (str(leaderboard_place) + "   -   " + time.attributes.user + "\n")
 				$"CanvasLayer/Leaderboard Times".text += (str(time.attributes.time) + "\n")
 			leaderboard_place += 1
+			usernames.append(time.attributes.user)
 	
 
 
