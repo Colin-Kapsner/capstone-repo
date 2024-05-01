@@ -1414,7 +1414,6 @@ offset = Vector2(0, -4096)
 metadata/_edit_lock_ = true
 
 [node name="Hint" type="Label" parent="."]
-visible = false
 texture_filter = 1
 offset_left = -165.0
 offset_top = 31.0

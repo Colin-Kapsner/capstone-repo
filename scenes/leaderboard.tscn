@@ -37,36 +37,36 @@ scale = Vector2(1.625, 1.625)
 text = "Leaderboard"
 
 [node name="Leaderboard Times" type="RichTextLabel" parent="CanvasLayer"]
-offset_left = 666.0
+offset_left = 671.0
 offset_top = 111.0
-offset_right = 871.0
+offset_right = 876.0
 offset_bottom = 643.0
 scale = Vector2(0.585, 0.585)
 theme_override_font_sizes/normal_font_size = 35
 text = "|||"
 
 [node name="Leaderboard Names" type="RichTextLabel" parent="CanvasLayer"]
-offset_left = 434.0
+offset_left = 404.0
 offset_top = 111.0
-offset_right = 816.0
+offset_right = 848.0
 offset_bottom = 643.0
 scale = Vector2(0.585, 0.585)
 theme_override_font_sizes/normal_font_size = 35
 text = "|||"
 
 [node name="Personal Leaderboard" type="RichTextLabel" parent="CanvasLayer"]
-offset_left = 838.0
+offset_left = 843.0
 offset_top = 233.0
-offset_right = 1180.0
+offset_right = 1185.0
 offset_bottom = 339.0
 scale = Vector2(0.675, 0.675)
 theme_override_font_sizes/normal_font_size = 42
 text = "|||"
 
 [node name="Your best time Label" type="RichTextLabel" parent="CanvasLayer"]
-offset_left = 800.0
+offset_left = 805.0
 offset_top = 173.0
-offset_right = 1144.0
+offset_right = 1149.0
 offset_bottom = 239.0
 scale = Vector2(0.675, 0.675)
 theme_override_font_sizes/normal_font_size = 41
