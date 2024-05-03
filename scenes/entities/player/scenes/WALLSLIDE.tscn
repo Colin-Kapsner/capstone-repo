@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cuwbfqer1rk6a"]
 
-[ext_resource type="Script" path="res://scenes/entities/player/WALLSLIDE.gd" id="1_8sqna"]
+[ext_resource type="Script" path="res://scenes/entities/player/scripts/WALLSLIDE.gd" id="1_8sqna"]
+
 
 [node name="WALLSLIDE" type="Node"]
 script = ExtResource("1_8sqna")

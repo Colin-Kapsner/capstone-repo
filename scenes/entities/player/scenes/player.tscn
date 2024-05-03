@@ -1,17 +1,17 @@
 [gd_scene load_steps=20 format=3 uid="uid://dtskr7q6mavlh"]
 
-[ext_resource type="Script" path="res://scenes/entities/player/Player.gd" id="1_5l6i7"]
-[ext_resource type="Texture2D" uid="uid://uefp3uxbj7ad" path="res://scenes/entities/player/player_img.png" id="2_p0jjs"]
-[ext_resource type="Script" path="res://scenes/entities/player/STATES.gd" id="3_1o1ar"]
-[ext_resource type="PackedScene" uid="uid://dpdbnxwrn4bts" path="res://scenes/entities/player/JUMP.tscn" id="3_86els"]
-[ext_resource type="PackedScene" uid="uid://ccigh1xgrquio" path="res://scenes/entities/player/IDLE.tscn" id="4_w1fye"]
-[ext_resource type="PackedScene" uid="uid://cdxudr3i3rxr4" path="res://scenes/entities/player/MOVE.tscn" id="5_ff0ql"]
-[ext_resource type="Script" path="res://scenes/entities/player/IDLE.gd" id="6_ot4r5"]
-[ext_resource type="PackedScene" uid="uid://ctubeawyfw8t" path="res://scenes/entities/player/FALL.tscn" id="6_tfl4x"]
-[ext_resource type="PackedScene" uid="uid://dd1lek0mo24kp" path="res://scenes/entities/player/DASH.tscn" id="9_1dnbd"]
-[ext_resource type="PackedScene" uid="uid://cuwbfqer1rk6a" path="res://scenes/entities/player/WALLSLIDE.tscn" id="10_pc4s1"]
-[ext_resource type="PackedScene" uid="uid://c4kl4pkmkxkqe" path="res://scenes/entities/player/SLIDE.tscn" id="11_tc32x"]
-[ext_resource type="Script" path="res://scenes/entities/player/SLIDE.gd" id="12_xep0n"]
+[ext_resource type="Script" path="res://scenes/entities/player/scripts/Player.gd" id="1_5l6i7"]
+[ext_resource type="Texture2D" uid="uid://uefp3uxbj7ad" path="res://assets/Images/player_img.png" id="2_1ayiw"]
+[ext_resource type="Script" path="res://scenes/entities/player/scripts/STATES.gd" id="3_1o1ar"]
+[ext_resource type="PackedScene" uid="uid://dpdbnxwrn4bts" path="res://scenes/entities/player/scenes/JUMP.tscn" id="3_86els"]
+[ext_resource type="PackedScene" uid="uid://ccigh1xgrquio" path="res://scenes/entities/player/scenes/IDLE.tscn" id="4_w1fye"]
+[ext_resource type="PackedScene" uid="uid://cdxudr3i3rxr4" path="res://scenes/entities/player/scenes/MOVE.tscn" id="5_ff0ql"]
+[ext_resource type="Script" path="res://scenes/entities/player/scripts/IDLE.gd" id="6_ot4r5"]
+[ext_resource type="PackedScene" uid="uid://ctubeawyfw8t" path="res://scenes/entities/player/scenes/FALL.tscn" id="6_tfl4x"]
+[ext_resource type="PackedScene" uid="uid://dd1lek0mo24kp" path="res://scenes/entities/player/scenes/DASH.tscn" id="9_1dnbd"]
+[ext_resource type="PackedScene" uid="uid://cuwbfqer1rk6a" path="res://scenes/entities/player/scenes/WALLSLIDE.tscn" id="10_pc4s1"]
+[ext_resource type="PackedScene" uid="uid://c4kl4pkmkxkqe" path="res://scenes/entities/player/scenes/SLIDE.tscn" id="11_tc32x"]
+[ext_resource type="Script" path="res://scenes/entities/player/scripts/SLIDE.gd" id="12_xep0n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0ij0r"]
 radius = 12.0
@@ -101,7 +101,7 @@ script = ExtResource("1_5l6i7")
 [node name="PlayerImg" type="Sprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(-0.0598981, -0.0604686)
-texture = ExtResource("2_p0jjs")
+texture = ExtResource("2_1ayiw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, -0.105)

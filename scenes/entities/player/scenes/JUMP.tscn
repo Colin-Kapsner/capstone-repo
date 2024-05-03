@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dpdbnxwrn4bts"]
 
-[ext_resource type="Script" path="res://scenes/entities/player/JUMP.gd" id="1_behh2"]
+[ext_resource type="Script" path="res://scenes/entities/player/scripts/JUMP.gd" id="1_behh2"]
+
 
 [node name="JUMP" type="Node"]
 script = ExtResource("1_behh2")

@@ -197,7 +197,7 @@ func _on_end_timer_body_entered(body):
 	
 
 func _on_leaderboard_delay_timeout():
-	get_tree().change_scene_to_file("res://scenes/leaderboard.tscn")
+	get_tree().change_scene_to_file("res://leaderboard.tscn")
 func timer_logic(delta: float):
 	if counting:
 		time_elapsed += delta

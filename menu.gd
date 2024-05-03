@@ -22,4 +22,4 @@ func _on_leaderboard_pressed():
 	if myPrefs.user_token == "":
 		get_tree().change_scene_to_file("res://scenes/signup.tscn")
 	else:
-		get_tree().change_scene_to_file("res://scenes/leaderboard.tscn")
+		get_tree().change_scene_to_file("res://leaderboard.tscn")

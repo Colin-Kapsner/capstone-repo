@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://sc5m2ydbwly8"]
 
-[ext_resource type="Script" path="res://scenes/leaderboard.gd" id="1_2rlug"]
+[ext_resource type="Script" path="res://leaderboard.gd" id="1_2rlug"]
 [ext_resource type="Texture2D" uid="uid://dghlkxqw02mt8" path="res://scenes/assets/Nebula Aqua-Pink.png" id="2_kakvf"]
 [ext_resource type="Texture2D" uid="uid://dwlop8yon2jth" path="res://scenes/assets/Stars Small_1.png" id="3_uo8dx"]
 [ext_resource type="Texture2D" uid="uid://dx8xfryed3hcs" path="res://scenes/assets/Stars Small_2.png" id="4_6oe6q"]
